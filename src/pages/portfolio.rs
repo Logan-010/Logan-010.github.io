@@ -9,27 +9,25 @@ fn Project(
     link: &'static str,
 ) -> impl IntoView {
     view! {
-        <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
-            <div class="flex justify-center items-center">
-                <img
-                    class="h-100 "
-                    src=image
-                    width="300"
-                    alt="A Project"
-                    class="rounded-xl object-cover"
-                    style="object-fit: fit;"
-                    loading="lazy"
-                />
+        <a target="_blank" href=link>
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+                <div class="flex justify-center items-center">
+                    <img
+                        class="h-100 "
+                        src=image
+                        width="300"
+                        alt="A Project"
+                        class="rounded-xl object-cover"
+                        style="object-fit: fit;"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="p-4">
+                    <h3 class="hover:underline text-lg font-semibold">{name}</h3>
+                    <p class="text-gray-500 dark:text-gray-400">{description}</p>
+                </div>
             </div>
-            <div class="p-4">
-                <h3 class="text-lg font-semibold">
-                    <a class="hover:underline" target="_blank" href=link>
-                        {name}
-                    </a>
-                </h3>
-                <p class="text-gray-500 dark:text-gray-400">{description}</p>
-            </div>
-        </div>
+        </a>
     }
 }
 
