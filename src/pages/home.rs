@@ -8,8 +8,8 @@ pub fn Home() -> impl IntoView {
             <Nav/>
 
             <main class="flex-1">
-                <section class="w-full py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20">
-                    <div class="container px-4 md:px-6 grid gap-6 md:gap-10 lg:grid-cols-2 items-center">
+                <section class="w-full flex h-screen">
+                    <div class="m-auto container px-4 md:px-6 grid gap-6 md:gap-10 lg:grid-cols-2 items-center">
                         <div class="space-y-4 md:space-y-6">
                             <h1 class="text-gray-100 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                                 {"Logan Briesemeister"}
