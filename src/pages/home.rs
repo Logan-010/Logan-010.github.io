@@ -7,15 +7,11 @@ pub fn Home() -> impl IntoView {
         <div class="flex flex-col min-h-[100dvh]">
             <Nav/>
 
-            <br/>
-            <br/>
-            <br/>
-
             <main class="flex-1">
                 <section class="w-full py-12 md:py-24 lg:py-32 xl:py-40">
                     <div class="container px-4 md:px-6 grid gap-6 md:gap-10 lg:grid-cols-2 items-center">
                         <div class="space-y-4 md:space-y-6">
-                            <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                            <h1 class="text-gray-100 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                                 {"Logan Briesemeister"}
                             </h1>
                             <h2 class="text-2xl font-semibold sm:text-3xl">
@@ -26,14 +22,14 @@ pub fn Home() -> impl IntoView {
                             </p>
                             <div class="flex gap-4">
                                 <a
-                                    class="bg-[#262626] inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2"
+                                    class="border-gray-800 border-gray-800 bg-gray-950 hover:bg-gray-900 hover:text-white focus-visible:ring-gray-300 hover:underline inline-flex items-center rounded-md border border-gray-200 px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
                                     href="https://github.com/Logan-010"
                                     target="_blank"
                                 >
                                     {"View my github"}
                                 </a>
                                 <a
-                                    class="bg-[#262626] inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2"
+                                    class="border-gray-800 border-gray-800 bg-gray-950 hover:bg-gray-900 hover:text-white focus-visible:ring-gray-300 hover:underline inline-flex items-center rounded-md border border-gray-200 px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
                                     href="https://github.com/Logan-010/Logan-010.github.io"
                                     target="_blank"
                                 >
