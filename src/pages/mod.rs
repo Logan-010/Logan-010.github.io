@@ -54,7 +54,7 @@ pub fn Nav() -> impl IntoView {
                     href="./about"
                     rel="ugc"
                 >
-                    {" About \u{2139} "}
+                    {" About \u{1F6C8} "}
                 </a>
                 <a
                     class="text-sm font-medium hover:underline underline-offset-4"
