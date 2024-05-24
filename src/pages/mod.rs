@@ -47,14 +47,14 @@ pub fn Nav() -> impl IntoView {
                     href="./portfolio"
                     rel="ugc"
                 >
-                    {" Portfolio \u{1F4D5} "}
+                    {" Portfolio \u{1F4BB} "}
                 </a>
                 <a
                     class="text-sm font-medium hover:underline underline-offset-4"
                     href="./about"
                     rel="ugc"
                 >
-                    {" About \u{1F6C8} "}
+                    {" About \u{2728} "}
                 </a>
                 <a
                     class="text-sm font-medium hover:underline underline-offset-4"
