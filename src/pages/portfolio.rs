@@ -85,6 +85,12 @@ pub fn Portfolio() -> impl IntoView {
                             description="Adds the max optimization for a rust project by appending to Cargo.toml"
                             link="https://github.com/Logan-010/optimize"
                         />
+                        <Project
+                            name="Clargo"
+                            image="./projects/7.png"
+                            description="Clargo is a simple & effective incremental build system for C applications"
+                            link="https://github.com/Logan-010/clargo"
+                        />
                     </div>
                 </div>
             </section>
