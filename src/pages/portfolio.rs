@@ -91,6 +91,12 @@ pub fn Portfolio() -> impl IntoView {
                             description="Clargo is a simple & effective incremental build system for C applications"
                             link="https://github.com/Logan-010/clargo"
                         />
+                        <Project
+                            name="(Re)cycle"
+                            image="./projects/8.png"
+                            description="A simple 2d game about recycling built in bevy"
+                            link="https://github.com/Logan-010/re-cycle"
+                        />
                     </div>
                 </div>
             </section>
