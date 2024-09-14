@@ -20,7 +20,7 @@ pub fn About() -> impl IntoView {
                             </p>
                         </div>
                         <p class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                            {r#"I'm currently a 15 year old high school student with a passion for computers. I love being able to code up whatever is possible, and learning as a whole. I'm well familiar with the Rust and Golang programming languages. Along with C, Python, & OCaml as runner-ups."#}
+                            {r#"I'm currently a 16 year old high school student with a passion for computers. I love being able to code up whatever is possible, and learning as a whole. I'm well familiar with the Rust and Golang programming languages. Along with C, Python, & OCaml as runner-ups."#}
                         </p>
                     </div>
                 </div>
