@@ -97,6 +97,12 @@ pub fn Portfolio() -> impl IntoView {
                             description="A simple 2d game about recycling built in bevy"
                             link="https://github.com/Logan-010/re-cycle"
                         />
+                        <Project
+                            name="mbrot"
+                            image="./projects/9.png"
+                            description="Simple to use CLI mandelbrot fractal generator."
+                            link="https://github.com/Logan-010/re-cycle"
+                        />
                     </div>
                 </div>
             </section>
