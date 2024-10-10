@@ -101,7 +101,7 @@ pub fn Portfolio() -> impl IntoView {
                             name="mbrot"
                             image="./projects/9.png"
                             description="Simple to use CLI mandelbrot fractal generator."
-                            link="https://github.com/Logan-010/re-cycle"
+                            link="https://github.com/Logan-010/mbrot"
                         />
                     </div>
                 </div>
