@@ -39,7 +39,7 @@ pub fn Home() -> impl IntoView {
                         </div>
                         <div class="flex justify-center">
                             <img
-                                src="./seedse.jpg"
+                                src="./logan.jpg"
                                 width="400"
                                 height="400"
                                 alt="Logan Briesemeister"

@@ -1,8 +1,17 @@
 use super::Nav;
 use leptos::*;
+use chrono::{NaiveDate, Utc};
+
+fn years_since(start_date: NaiveDate) -> i64 {
+    let today = Utc::now().date_naive();
+    let duration = today.signed_duration_since(start_date);
+    duration.num_days() / 365
+}
 
 #[component]
 pub fn About() -> impl IntoView {
+    let age = years_since(NaiveDate::from_ymd_opt(2008, 6, 16).unwrap());
+
     view! {
         <div class="flex flex-col min-h-[100dvh]">
             <Nav/>
@@ -20,7 +29,10 @@ pub fn About() -> impl IntoView {
                             </p>
                         </div>
                         <p class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                            {r#"I'm currently a 16 year old high school student with a passion for computers. I love being able to code up whatever is possible, and learning as a whole. I'm well familiar with the Rust and Golang programming languages. Along with C, Python, & OCaml as runner-ups."#}
+                            {format!(
+                                "I\'m currently a {} year old high school student with a passion for computers. I love being able to code up whatever is possible, and learning as a whole. I\'m well familiar with the Rust and Golang programming languages. Along with Zig, Python, OCaml, and C as runner-ups.",
+                                age,
+                            )}
                         </p>
                     </div>
                 </div>
