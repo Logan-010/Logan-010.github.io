@@ -1,5 +1,4 @@
-use super::Nav;
-use leptos::*;
+use leptos::prelude::*;
 
 #[component]
 fn Project(
@@ -13,11 +12,10 @@ fn Project(
             <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
                 <div class="flex justify-center items-center">
                     <img
-                        class="h-100 "
                         src=image
                         width="300"
                         alt="A Project"
-                        class="rounded-xl object-cover"
+                        class="h-100 rounded-xl object-cover"
                         style="object-fit: fit;"
                         loading="lazy"
                     />
@@ -35,8 +33,6 @@ fn Project(
 pub fn Portfolio() -> impl IntoView {
     view! {
         <div class="flex flex-col min-h-[100dvh]">
-            <Nav/>
-
             <section class="w-full py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20 flex flex-col items-center">
                 <h1 class="text-gray-100 text-3xl font-bold tracking-tighter md:text-4xl/tight py-2 space-y-1 text-center">
                     {"Portfolio"}

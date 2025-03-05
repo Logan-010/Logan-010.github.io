@@ -1,5 +1,4 @@
-use super::Nav;
-use leptos::*;
+use leptos::prelude::*;
 use chrono::{NaiveDate, Utc};
 
 fn years_since(start_date: NaiveDate) -> i64 {
@@ -14,8 +13,6 @@ pub fn About() -> impl IntoView {
 
     view! {
         <div class="flex flex-col min-h-[100dvh]">
-            <Nav/>
-
             <section class="w-full py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20 flex flex-col items-center">
                 <div class="container items-center justify-center gap-6 px-4 md:px-6">
                     <div class="flex flex-col items-center space-y-4">

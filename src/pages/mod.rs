@@ -1,10 +1,10 @@
-use leptos::*;
-
 pub mod about;
 pub mod contact;
 pub mod four_o_four;
 pub mod home;
 pub mod portfolio;
+
+use leptos::prelude::*;
 
 #[component]
 pub fn Nav() -> impl IntoView {

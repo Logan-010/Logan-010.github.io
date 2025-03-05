@@ -1,12 +1,9 @@
-use super::Nav;
-use leptos::*;
+use leptos::prelude::*;
 
 #[component]
 pub fn Home() -> impl IntoView {
     view! {
         <div class="flex flex-col min-h-[100dvh]">
-            <Nav/>
-
             <main class="flex-1">
                 <section class="w-full flex h-screen">
                     <div class="m-auto container px-4 md:px-6 grid gap-6 md:gap-10 lg:grid-cols-2 items-center">

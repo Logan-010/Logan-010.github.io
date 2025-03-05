@@ -1,12 +1,12 @@
 [package]
 name = "portfolio"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
 chrono = "0.4.38"
-leptos = { version = "0.6.11", default-features = false, features = ["csr"] }
-leptos_router = { version = "0.6.11", default-features = false, features = ["csr"] }
+leptos = { version = "0.7.7", default-features = false, features = ["csr"] }
+leptos_router = { version = "0.7.7", default-features = false }
 
 [profile.release]
 codegen-units = 1

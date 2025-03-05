@@ -1,13 +1,7 @@
 mod pages;
 
-use leptos::*;
-use leptos_router::*;
-
-use pages::about::About;
-use pages::contact::Contact;
-use pages::four_o_four::Error404;
-use pages::home::Home;
-use pages::portfolio::Portfolio;
+use leptos::prelude::*;
+use leptos_router::{components::*, path};
 
 fn main() {
     mount_to_body(App);
@@ -16,14 +10,18 @@ fn main() {
 #[component]
 fn App() -> impl IntoView {
     view! {
-        <Router>
-            <Routes>
-                <Route path="/" view=Home/>
-                <Route path="/portfolio" view=Portfolio/>
-                <Route path="/about" view=About/>
-                <Route path="/contact" view=Contact/>
-                <Route path="/*any" view=Error404/>
-            </Routes>
-        </Router>
+        <div id="root">
+            <Router>
+                <pages::Nav/>
+                <main>
+                    <Routes fallback=pages::four_o_four::Error404>
+                        <Route path=path!("/") view=pages::home::Home/>
+                        <Route path=path!("/portfolio") view=pages::portfolio::Portfolio/>
+                        <Route path=path!("/about") view=pages::about::About/>
+                        <Route path=path!("/contact") view=pages::contact::Contact/>
+                    </Routes>
+                </main>
+            </Router>
+        </div>
     }
 }

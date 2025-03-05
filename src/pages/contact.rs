@@ -1,12 +1,9 @@
-use super::Nav;
-use leptos::*;
+use leptos::prelude::*;
 
 #[component]
 pub fn Contact() -> impl IntoView {
     view! {
         <div class="flex flex-col min-h-[100dvh]">
-            <Nav/>
-
             <section class="w-full py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20 flex flex-col items-center">
                 <h1 class="text-gray-100 text-3xl font-bold tracking-tighter md:text-4xl/tight py-2 space-y-1 text-center">
                     {"Contact"}
