@@ -99,6 +99,12 @@ pub fn Portfolio() -> impl IntoView {
                             description="Simple to use CLI mandelbrot fractal generator."
                             link="https://github.com/Logan-010/mbrot"
                         />
+                        <Project
+                            name="yafs"
+                            image="./projects/10.png"
+                            description="A (authenticated) P2P way to share files on your local network"
+                            link="https://github.com/Logan-010/yafs"
+                        />
                     </div>
                 </div>
             </section>
