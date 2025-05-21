@@ -105,6 +105,12 @@ pub fn Portfolio() -> impl IntoView {
                             description="A (authenticated) P2P way to share files on your local network"
                             link="https://github.com/Logan-010/yafs"
                         />
+                        <Project
+                            name="tcp2p"
+                            image="./projects/11.png"
+                            description="P2P based TCP tunneling"
+                            link="https://github.com/Logan-010/tcp2p"
+                        />
                     </div>
                 </div>
             </section>
