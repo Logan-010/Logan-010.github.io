@@ -3,23 +3,30 @@ use leptos::prelude::*;
 #[component]
 fn Project(
     name: &'static str,
-    image: &'static str,
+    image: Option<&'static str>,
     description: &'static str,
     link: &'static str,
 ) -> impl IntoView {
     view! {
         <a target="_blank" href=link>
             <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
-                <div class="flex justify-center items-center">
-                    <img
-                        src=image
-                        width="300"
-                        alt="A Project"
-                        class="h-100 rounded-xl object-cover"
-                        style="object-fit: fit;"
-                        loading="lazy"
-                    />
-                </div>
+                {
+                    match image {
+                        Some(url) => view!{
+                            <div class="flex justify-center items-center">
+                                <img
+                                    src=url
+                                    height="300"
+                                    alt="A Project"
+                                    class="h-100 rounded-xl object-cover"
+                                    style="object-fit: fit;"
+                                    loading="lazy"
+                                />
+                            </div>
+                        }.into_any(),
+                        None => view!{}.into_any()
+                    }
+                }
                 <div class="p-4">
                     <h3 class="hover:underline text-lg font-semibold">{name}</h3>
                     <p class="text-gray-500 dark:text-gray-400">{description}</p>
@@ -47,75 +54,57 @@ pub fn Portfolio() -> impl IntoView {
                         // Add entry for every big project.
                         <Project
                             name="This site"
-                            image="./projects/1.png"
+                            image=Some("./projects/portfolio.png")
                             description="A portfolio page"
                             link="https://github.com/Logan-010/Logan-010.github.io"
                         />
                         <Project
-                            name="Liberated-chat"
-                            image="./projects/2.png"
-                            description="Simple & fast chatroom"
-                            link="https://github.com/Logan-010/liberated-chat"
-                        />
-                        <Project
                             name="Mini.nz"
-                            image="./projects/3.png"
+                            image=Some("./projects/mini-nz.png")
                             description="Lightweight file upload service written in Go"
                             link="https://github.com/Logan-010/mini.nz"
                         />
                         <Project
-                            name="Loccount"
-                            image="./projects/4.png"
-                            description="Simple utility to count total LOC in a project"
-                            link="https://github.com/Logan-010/loccount"
-                        />
-                        <Project
-                            name="Rusterv"
-                            image="./projects/5.png"
-                            description="A simple program to serve a directory over http."
-                            link="https://github.com/Logan-010/rusterv"
-                        />
-                        <Project
-                            name="Optimize"
-                            image="./projects/6.png"
-                            description="Adds the max optimization for a rust project by appending to Cargo.toml"
-                            link="https://github.com/Logan-010/optimize"
-                        />
-                        <Project
-                            name="Clargo"
-                            image="./projects/7.png"
-                            description="Clargo is a simple & effective incremental build system for C applications"
-                            link="https://github.com/Logan-010/clargo"
-                        />
-                        <Project
                             name="(Re)cycle"
-                            image="./projects/8.png"
+                            image=Some("./projects/re-cycle.png")
                             description="A simple 2d game about recycling built in bevy"
                             link="https://github.com/Logan-010/re-cycle"
                         />
                         <Project
                             name="mbrot"
-                            image="./projects/9.png"
+                            image=Some("./projects/mbrot.png")
                             description="Simple to use CLI mandelbrot fractal generator."
                             link="https://github.com/Logan-010/mbrot"
                         />
                         <Project
-                            name="yafs"
-                            image="./projects/10.png"
-                            description="A (authenticated) P2P way to share files on your local network"
-                            link="https://github.com/Logan-010/yafs"
+                            name="gshare"
+                            image=None
+                            description="P2P file share across the globe"
+                            link="https://github.com/Logan-010/gshare"
                         />
                         <Project
-                            name="tcp2p"
-                            image="./projects/11.png"
-                            description="P2P based TCP tunneling"
-                            link="https://github.com/Logan-010/tcp2p"
+                            name="Shaman"
+                            image=Some("./projects/shaman.png")
+                            description="P2P on/offline password manager"
+                            link="https://github.com/Logan-010/shaman"
                         />
                         <Project
-                            name="lsend"
-                            image="./projects/12.png"
-                            description="Simple tool to securely share a file over your local network"
-                            link="https://github.com/Logan-010/lsend"
+                            name="zcrpt"
+                            image=None
+                            description="Fast encryption in your terminal"
+                            link="https://github.com/Logan-010/zcrpt"
+                        />
+                        <Project
+                            name="diary"
+                            image=None
+                            description="A private, encrypted diary for your thoughts in your command line"
+                            link="https://github.com/Logan-010/diary"
+                        />
+                        <Project
+                            name="Glerp"
+                            image=Some("./projects/glerp.png")
+                            description="Dead simple audio recorder"
+                            link="https://github.com/Logan-010/glerp"
                         />
                     </div>
                 </div>
