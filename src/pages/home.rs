@@ -15,7 +15,7 @@ pub fn Home() -> impl IntoView {
                                 {"Backend & frontend developer"}
                             </h2>
                             <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl">
-                                {r#"I'm a student at LHS who's excited to learn new things. I love working on new projects."#}
+                                {r#"I'm Logan, a senior at LHS and soon to be a freshman at Mizzou who greatly enjoys computers and programming, along with playing bass, guitar, skateboarding, music (bit of a metalhead), and cooking."#}
                             </p>
                             <div class="flex gap-4">
                                 <a
