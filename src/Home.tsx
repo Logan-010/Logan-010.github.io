@@ -1,8 +1,5 @@
-use leptos::prelude::*;
-
-#[component]
-pub fn Home() -> impl IntoView {
-    view! {
+export default function Home() {
+    return (
         <div class="flex flex-col min-h-[100dvh]">
             <main class="flex-1">
                 <section class="w-full flex h-screen">
@@ -15,7 +12,7 @@ pub fn Home() -> impl IntoView {
                                 {"Backend & frontend developer"}
                             </h2>
                             <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl">
-                                {r#"I'm Logan, a senior at LHS and soon to be a freshman at Mizzou who greatly enjoys computers and programming, along with playing bass, guitar, skateboarding, music (bit of a metalhead), and cooking."#}
+                                {"I'm Logan, a senior at LHS and soon to be a freshman at Mizzou who greatly enjoys computers and programming, along with playing bass, guitar, skateboarding, music (bit of a metalhead), and cooking."}
                             </p>
                             <div class="flex gap-4">
                                 <a
@@ -48,5 +45,5 @@ pub fn Home() -> impl IntoView {
                 </section>
             </main>
         </div>
-    }
+    )
 }

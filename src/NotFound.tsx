@@ -1,8 +1,5 @@
-use leptos::prelude::*;
-
-#[component]
-pub fn Error404() -> impl IntoView {
-    view! {
+export default function NotFound() {
+    return (
         <div class="flex flex-col min-h-[100dvh]">
             <section class="w-full py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20">
                 <div class="text-center space-y-4">
@@ -31,5 +28,5 @@ pub fn Error404() -> impl IntoView {
                 </div>
             </section>
         </div>
-    }
+    )
 }

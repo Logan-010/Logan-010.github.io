@@ -1,14 +1,5 @@
-pub mod about;
-pub mod contact;
-pub mod four_o_four;
-pub mod home;
-pub mod portfolio;
-
-use leptos::prelude::*;
-
-#[component]
-pub fn Nav() -> impl IntoView {
-    view! {
+export default function Nav() {
+    return (
         <header class="w-full fixed bg-black px-4 lg:px-6 h-14 flex items-center justify-between">
             <br/>
             <nav class=" lg:flex gap-4 sm:gap-6">
@@ -42,5 +33,5 @@ pub fn Nav() -> impl IntoView {
                 </a>
             </nav>
         </header>
-    }
+    )
 }

@@ -1,8 +1,5 @@
-use leptos::prelude::*;
-
-#[component]
-pub fn Contact() -> impl IntoView {
-    view! {
+export default function Contact() {
+    return (
         <div class="flex flex-col min-h-[100dvh]">
             <section class="w-full py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20 flex flex-col items-center">
                 <h1 class="text-gray-100 text-3xl font-bold tracking-tighter md:text-4xl/tight py-2 space-y-1 text-center">
@@ -12,7 +9,7 @@ pub fn Contact() -> impl IntoView {
                 <div class="container items-center justify-center gap-6 px-4 md:px-6">
                     <div class="flex flex-col items-center space-y-4">
                         <p class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                            {r#"I currently have NO BUISNESS EMAIL! And I don't feel like leaking my personal one. If you wish to contact me, please do so via the Linkedin profile linked below."#}
+                            {"I currently have NO BUISNESS EMAIL! And I don't feel like leaking my personal one. If you wish to contact me, please do so via the Linkedin profile linked below."}
 
                         </p>
                         <h3>
@@ -29,5 +26,5 @@ pub fn Contact() -> impl IntoView {
             </section>
 
         </div>
-    }
+    )
 }
