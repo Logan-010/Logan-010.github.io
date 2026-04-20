@@ -9,8 +9,11 @@ export default function Home() {
                                 {"Logan Briesemeister"}
                             </h1>
                             <h2 class="text-2xl font-semibold sm:text-3xl">
-                                {"Backend & frontend developer"}
+                                {"\"Jack of All Trades\" Developer"}
                             </h2>
+                            <h3 class="text-gray-200 text-lg sm:text-xl">
+                                {"Backend, Frontend, Microcontroller, & More"}
+                            </h3>
                             <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl">
                                 {"I'm Logan, a senior at LHS and soon to be a freshman at Mizzou who greatly enjoys computers and programming, along with playing bass, guitar, skateboarding, music (bit of a metalhead), and cooking."}
                             </p>
@@ -37,8 +40,8 @@ export default function Home() {
                                 width="400"
                                 height="400"
                                 alt="Logan Briesemeister"
-                                class="rounded-full w-64 h-64 object-cover"
-                                style="aspect-ratio: 400 / 400; object-fit: cover;"
+                                class="rounded-full w-100 h-100 object-cover"
+                                style="aspect-ratio: 500 / 500; object-fit: cover;"
                             />
                         </div>
                     </div>

@@ -6,7 +6,7 @@ function yearsSince(start: Date): number {
 
 export default function About() {
   // June 16, 2008.
-  const age = yearsSince(new Date(2008, 5, 16)); // month is 0‑indexed
+  const age = yearsSince(new Date(2008, 5, 16));
 
   return (
     <div class="flex flex-col min-h-[100dvh]">
@@ -24,7 +24,7 @@ export default function About() {
             </div>
 
             <p class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {`I'm currently a ${age} year old high school student with a passion for computers. I love being able to code up whatever is possible, and learning as a whole. I'm well familiar with the Rust and Golang programming languages. Along with Zig, Python, OCaml, and C as runner-ups.`}
+              {`I'm currently a ${age} year old student with a passion for computers. I love details. I always have and always will. Specifically, I love the small and intricate details that have a larger impact than they seem. Coding lets me express my love for details by changing little piece by little piece. I'm well versed in a variety of programming languages and frameworks such as Rust, Zig, Go, Js, Html, C, and more. Im also a huge extrovert and love working with people.`}
             </p>
           </div>
         </div>
