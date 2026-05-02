@@ -96,6 +96,12 @@ export default function Portfolio() {
               description="Dead simple audio recorder"
               link="https://github.com/Logan-010/glerp"
             />
+            <Project
+              name="ihnet2"
+              image={null}
+              description="Simple & secure CLI port forwarding to any computer in the world."
+              link="https://github.com/Logan-010/ihnet2"
+            />
           </div>
         </div>
       </section>
