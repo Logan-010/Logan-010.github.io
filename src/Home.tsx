@@ -27,7 +27,7 @@ export default function Home() {
                                 {"Backend, Frontend, Microcontroller, & More"}
                             </h3>
                             <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
-                                {"I'm Logan, a senior at LHS and soon to be a freshman at Mizzou who greatly enjoys computers and programming, along with playing bass, guitar, skateboarding, music (bit of a metalhead), and cooking."}
+                                {"I'm Logan, a graduate from LHS and freshman at Mizzou who greatly enjoys computers and programming, along with playing bass, guitar, skateboarding, music (bit of a metalhead), and cooking."}
                             </p>
 
                             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
