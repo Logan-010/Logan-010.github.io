@@ -1,21 +1,6 @@
-# Portfolio page
+# Portfolio
 
-Still in WIP.
+This is a professional (ish) portfolio for me & my work. Feel free to look at my
+code, styling, assets, etc. After all, it's public domain. :)
 
-# Built with
-
-- Preact
-- Typescript
-- Tailwindcss
-
-# Building
-
-If you want to build this yourself (I don't see why you would), be sure to have
-npm installed.
-
-Then run the following to build the app
-
-```sh
-npm i
-npm run build
-```
+Built with Preact, Vite, Tailwindcss, & love.
