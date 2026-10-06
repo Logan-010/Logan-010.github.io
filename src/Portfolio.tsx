@@ -102,6 +102,18 @@ export default function Portfolio() {
               description="Simple & secure CLI port forwarding to any computer in the world."
               link="https://github.com/Logan-010/ihnet2"
             />
+            <Project
+              name="thetachat"
+              image="./projects/thetachat.png"
+              description="Secure decentralized chat protocol"
+              link="https://github.com/Logan-010/thetachat"
+            />
+            <Project
+              name="oaks"
+              image={null}
+              description="Secure LAN file sharing in OCaml"
+              link="https://github.com/Logan-010/oaks"
+            />
           </div>
         </div>
       </section>
