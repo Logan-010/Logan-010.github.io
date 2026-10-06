@@ -44,6 +44,14 @@ export default function Home() {
                                 >
                                     {"View site source"}
                                 </a>
+                                <a
+                                    class="button"
+                                    href="/Resume.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {"View Resume"}
+                                </a>
                             </div>
                         </div>
 

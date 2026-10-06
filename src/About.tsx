@@ -23,6 +23,15 @@ export default function About() {
             <p class="body-copy">
               {`I'm currently a ${age} year old student with a passion for computers. I love details. I always have and always will. Specifically, I love the small and intricate details that have a larger impact than they seem. Coding lets me express my love for details by changing little piece by little piece. I'm well versed in a variety of programming languages (Rust, Zig, Go, Js, Html, C, etc) and frameworks (axum, tokio, tauri, preact, libp2p, etc). Additionally, I'm a huge extrovert and love working with people.`}
             </p>
+
+            <a
+              class="button"
+              href="/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {"View Resume"}
+            </a>
           </div>
         </div>
       </section>
