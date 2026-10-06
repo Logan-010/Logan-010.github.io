@@ -1,12 +1,12 @@
 export default function NotFound() {
     return (
-        <div class="flex flex-col min-h-[100dvh]">
-            <section class="w-full py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20">
-                <div class="text-center space-y-4">
-                    <h1 class="text-gray-100 py-5 text-5xl font-bold tracking-tighter">404</h1>
-                    <p class="text-gray-500">{"Oops! Page not found."}</p>
+        <div class="page-shell page-section flex flex-1 items-center justify-center">
+            <section class="w-full">
+                <div class="space-y-6 text-center">
+                    <h1 class="text-6xl font-semibold tracking-tight sm:text-8xl">404</h1>
+                    <p class="body-copy">{"Oops! Page not found."}</p>
                     <a
-                        class="border-gray-800 border-gray-800 bg-gray-950 hover:bg-gray-900 hover:text-white focus-visible:ring-gray-300 hover:underline inline-flex items-center rounded-md border border-gray-200 px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950"
+                        class="button"
                         href="./"
                     >
                         {"Go home"}

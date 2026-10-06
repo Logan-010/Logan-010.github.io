@@ -1,45 +1,44 @@
 export default function Home() {
     return (
-        <div class="flex flex-col min-h-[100dvh]">
-            <main class="flex-1">
-                <section class="w-full flex justify-center h-auto lg:h-screen">
-                    <div class="container mx-auto px-4 md:px-6 grid gap-10 md:gap-12 lg:grid-cols-2 items-center justify-center py-16 lg:py-0">
+        <div class="flex flex-1 flex-col">
+            <div class="flex flex-1 flex-col">
+                <section class="page-shell page-section flex flex-1 items-center">
+                    <div class="grid w-full items-center gap-10 sm:gap-14 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
 
-                        <div class="flex justify-center order-1 lg:order-2">
+                        <div class="order-1 flex justify-center lg:order-2 lg:justify-end">
                             <img
                                 src="./logan.jpg"
                                 width="400"
                                 height="400"
                                 alt="Logan Briesemeister"
-                                class="rounded-full w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover"
-                                style="aspect-ratio: 1 / 1; object-fit: cover;"
+                                class="aspect-square h-48 w-48 rounded-full object-cover ring-1 ring-line ring-offset-8 ring-offset-canvas sm:h-64 sm:w-64 lg:h-auto lg:w-full lg:max-w-80"
                             />
                         </div>
 
-                        <div class="space-y-4 md:space-y-6 order-2 lg:order-1 text-center lg:text-left">
-                            <h1 class="text-gray-100 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                        <div class="order-2 space-y-5 text-center lg:order-1 lg:text-left">
+                            <h1 class="text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl xl:text-6xl">
                                 {"Logan Briesemeister"}
                             </h1>
-                            <h2 class="text-2xl font-semibold sm:text-3xl">
+                            <h2 class="text-xl leading-snug font-medium text-balance sm:text-2xl">
                                 {"\"Jack of All Trades\" Developer"}
                             </h2>
-                            <h3 class="text-gray-200 text-lg sm:text-xl">
+                            <h3 class="text-base leading-relaxed text-muted sm:text-lg">
                                 {"Backend, Frontend, Microcontroller, & More"}
                             </h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
+                            <p class="body-copy mx-auto max-w-xl lg:mx-0">
                                 {"I'm Logan, a graduate from LHS and freshman at Mizzou who greatly enjoys computers and programming, along with playing bass, guitar, skateboarding, music (bit of a metalhead), and cooking."}
                             </p>
 
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <div class="flex flex-col justify-center gap-3 pt-3 sm:flex-row lg:justify-start">
                                 <a
-                                    class="bg-gray-950 hover:bg-gray-900 hover:text-white inline-flex items-center rounded-md border border-gray-800 px-4 py-2 text-sm font-medium shadow-sm transition-colors"
+                                    class="button button-primary"
                                     href="https://github.com/Logan-010"
                                     target="_blank"
                                 >
                                     {"View my github"}
                                 </a>
                                 <a
-                                    class="bg-gray-950 hover:bg-gray-900 hover:text-white inline-flex items-center rounded-md border border-gray-800 px-4 py-2 text-sm font-medium shadow-sm transition-colors"
+                                    class="button"
                                     href="https://github.com/Logan-010/Logan-010.github.io"
                                     target="_blank"
                                 >
@@ -50,7 +49,7 @@ export default function Home() {
 
                     </div>
                 </section>
-            </main>
+            </div>
         </div>
     )
 }

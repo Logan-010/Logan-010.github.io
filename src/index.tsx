@@ -14,7 +14,7 @@ export function App() {
 	return (
 		<LocationProvider>
 			<Nav />
-			<main>
+			<main class="flex flex-1 flex-col">
 				<Router>
 					<Route path="/" component={Home} />
 					<Route path="/portfolio" component={Portfolio} />

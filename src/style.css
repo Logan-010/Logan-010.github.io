@@ -1,6 +1,108 @@
 @import "tailwindcss";
 
-body {
-  background-color: black;
-  color: white;
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-soft: var(--soft);
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    --canvas: #fafaf9;
+    --surface: #ffffff;
+    --ink: #20201e;
+    --muted: #61615c;
+    --line: #e3e3de;
+    --soft: #efefeb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --canvas: #141414;
+      --surface: #1c1c1c;
+      --ink: #f0f0eb;
+      --muted: #aaaaa3;
+      --line: #333330;
+      --soft: #262624;
+    }
+  }
+
+  body {
+    @apply m-0 bg-canvas text-ink antialiased;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  #app {
+    @apply flex min-h-dvh flex-col;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a:focus-visible {
+    @apply outline-2 outline-offset-4 outline-ink;
+  }
+
+  ::selection {
+    @apply bg-ink text-canvas;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .page-section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .page-title {
+    @apply text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl;
+    text-wrap: balance;
+  }
+
+  .body-copy {
+    @apply text-base leading-8 text-muted sm:text-lg;
+    overflow-wrap: break-word;
+  }
+
+  .button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-surface px-5 py-3 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-soft;
+  }
+
+  .button-primary {
+    @apply border-ink bg-ink text-canvas hover:border-muted hover:bg-muted;
+  }
+
+  .nav-link {
+    @apply flex min-h-11 items-center justify-center rounded-lg px-2 text-xs font-medium text-muted transition-colors hover:bg-soft hover:text-ink sm:px-4 sm:text-sm;
+  }
+
+  .nav-link[aria-current="page"] {
+    @apply bg-soft text-ink;
+  }
+
+  .project-card {
+    @apply flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-muted;
+  }
+
+  .project-image {
+    @apply flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-line bg-soft p-4;
+  }
+
+  .experience {
+    @apply space-y-3 border-l-2 border-line pl-5 sm:pl-6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    transition-duration: 0s !important;
+  }
 }

@@ -1,31 +1,38 @@
+import { useLocation } from 'preact-iso';
+
 export default function Nav() {
+    const { path } = useLocation();
+
     return (
-        <header class="w-full fixed bg-black px-4 lg:px-6 h-14 flex items-center justify-between">
-            <br/>
-            <nav class=" lg:flex gap-4 sm:gap-6">
+        <header class="sticky top-0 z-20 border-b border-line bg-canvas/95 backdrop-blur-md">
+            <nav class="page-shell flex items-center justify-center gap-1 py-3 sm:justify-end sm:gap-2">
                 <a
-                    class="text-sm font-medium hover:underline underline-offset-4"
+                    class="nav-link"
+                    aria-current={path === '/' ? 'page' : undefined}
                     href="./"
                     rel="ugc"
                 >
                     {" Home \u{1F3E0} "}
                 </a>
                 <a
-                    class="text-sm font-medium hover:underline underline-offset-4"
+                    class="nav-link"
+                    aria-current={path === '/portfolio' ? 'page' : undefined}
                     href="./portfolio"
                     rel="ugc"
                 >
                     {" Portfolio \u{1F4BB} "}
                 </a>
                 <a
-                    class="text-sm font-medium hover:underline underline-offset-4"
+                    class="nav-link"
+                    aria-current={path === '/about' ? 'page' : undefined}
                     href="./about"
                     rel="ugc"
                 >
                     {" About \u{2728} "}
                 </a>
                 <a
-                    class="text-sm font-medium hover:underline underline-offset-4"
+                    class="nav-link"
+                    aria-current={path === '/contact' ? 'page' : undefined}
                     href="./contact"
                     rel="ugc"
                 >

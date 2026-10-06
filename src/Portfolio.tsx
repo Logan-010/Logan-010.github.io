@@ -5,43 +5,41 @@ function Project({
   link,
 }) {
   return (
-    <a target="_blank" href={link}>
-      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+    <a class="project-card group" target="_blank" href={link}>
         {image && (
-          <div class="flex justify-center items-center">
+          <div class="project-image">
             <img
               src={image}
               height="300"
               alt="A Project"
-              class="h-100 rounded-xl object-contain"
+              class="h-full w-full rounded-lg object-contain"
               loading="lazy"
             />
           </div>
         )}
 
-        <div class="p-4">
-          <h3 class="hover:underline text-lg font-semibold">{name}</h3>
-          <p class="text-gray-500 dark:text-gray-400">{description}</p>
+        <div class="flex flex-1 flex-col gap-2 p-6">
+          <h3 class="text-lg font-semibold tracking-tight group-hover:underline underline-offset-4">{name}</h3>
+          <p class="text-sm leading-6 text-muted">{description}</p>
         </div>
-      </div>
     </a>
   )
 }
 
 export default function Portfolio() {
   return (
-    <div class="flex flex-col min-h-[100dvh]">
-      <section class="w-full py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20 flex flex-col items-center">
-        <h1 class="text-gray-100 text-3xl font-bold tracking-tighter md:text-4xl/tight py-2 space-y-1 text-center">
+    <div class="page-shell page-section">
+      <section class="w-full">
+        <h1 class="page-title">
           {"Portfolio"}
         </h1>
 
-        <p class="text-gray-500 text-md md:text-xl dark:text-gray-400 px-9 py-3">
+        <p class="body-copy mt-5 max-w-2xl">
           {"Listed here are some projects I am (more) proud of. The rest can be found on my github."}
         </p>
 
-        <div class="container px-4 md:px-6">
-          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-10 sm:mt-12">
+          <div class="grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             <Project
               name="This site"
               image="./projects/portfolio.png"
