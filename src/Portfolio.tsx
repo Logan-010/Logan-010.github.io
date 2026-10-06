@@ -112,6 +112,12 @@ export default function Portfolio() {
               description="Secure LAN file sharing in OCaml"
               link="https://github.com/Logan-010/oaks"
             />
+            <Project
+              name="vobos"
+              image="./projects/vobos.png"
+              description="Smart and interactive desktop AI assistant"
+              link="https://github.com/Logan-010/vobos"
+            />
           </div>
         </div>
       </section>
