@@ -47,52 +47,10 @@ export default function Portfolio() {
               link="https://github.com/Logan-010/Logan-010.github.io"
             />
             <Project
-              name="Mini.nz"
-              image="./projects/mini-nz.jpg"
-              description="Lightweight file upload service written in Go"
-              link="https://github.com/Logan-010/mini.nz"
-            />
-            <Project
-              name="(Re)cycle"
-              image="./projects/re-cycle.jpg"
-              description="A simple 2d game about recycling built in bevy"
-              link="https://github.com/Logan-010/re-cycle"
-            />
-            <Project
               name="mbrot"
               image="./projects/mbrot.jpg"
               description="Simple to use CLI mandelbrot fractal generator."
               link="https://github.com/Logan-010/mbrot"
-            />
-            <Project
-              name="gshare"
-              image={null}
-              description="P2P file share across the globe"
-              link="https://github.com/Logan-010/gshare"
-            />
-            <Project
-              name="Shaman"
-              image="./projects/shaman.jpg"
-              description="P2P on/offline password manager"
-              link="https://github.com/Logan-010/shaman"
-            />
-            <Project
-              name="zcrpt"
-              image={null}
-              description="Fast encryption in your terminal"
-              link="https://github.com/Logan-010/zcrpt"
-            />
-            <Project
-              name="diary"
-              image={null}
-              description="A private, encrypted diary for your thoughts in your command line"
-              link="https://github.com/Logan-010/diary"
-            />
-            <Project
-              name="Glerp"
-              image="./projects/glerp.jpg"
-              description="Dead simple audio recorder"
-              link="https://github.com/Logan-010/glerp"
             />
             <Project
               name="ihnet2"
@@ -123,6 +81,48 @@ export default function Portfolio() {
               image="./projects/rpws.jpg"
               description="Reliable P2P password manager."
               link="https://github.com/Logan-010/rpws"
+            />
+            <Project
+              name="(Re)cycle"
+              image="./projects/re-cycle.jpg"
+              description="A simple 2d game about recycling built in bevy"
+              link="https://github.com/Logan-010/re-cycle"
+            />
+            <Project
+              name="Mini.nz"
+              image="./projects/mini-nz.jpg"
+              description="Lightweight file upload service written in Go"
+              link="https://github.com/Logan-010/mini.nz"
+            />
+            <Project
+              name="diary"
+              image={null}
+              description="A private, encrypted diary for your thoughts in your command line"
+              link="https://github.com/Logan-010/diary"
+            />
+            <Project
+              name="Glerp"
+              image="./projects/glerp.jpg"
+              description="Dead simple audio recorder"
+              link="https://github.com/Logan-010/glerp"
+            />
+            <Project
+              name="gshare"
+              image={null}
+              description="P2P file share across the globe"
+              link="https://github.com/Logan-010/gshare"
+            />
+            <Project
+              name="Shaman"
+              image="./projects/shaman.jpg"
+              description="P2P on/offline password manager"
+              link="https://github.com/Logan-010/shaman"
+            />
+            <Project
+              name="htek"
+              image={null}
+              description="A speedy & purely functional file encryption program."
+              link="https://github.com/Logan-010/htek"
             />
           </div>
         </div>
