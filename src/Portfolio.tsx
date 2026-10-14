@@ -42,25 +42,25 @@ export default function Portfolio() {
           <div class="grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             <Project
               name="This site"
-              image="./projects/portfolio.png"
+              image="./projects/portfolio.jpg"
               description="A portfolio page"
               link="https://github.com/Logan-010/Logan-010.github.io"
             />
             <Project
               name="Mini.nz"
-              image="./projects/mini-nz.png"
+              image="./projects/mini-nz.jpg"
               description="Lightweight file upload service written in Go"
               link="https://github.com/Logan-010/mini.nz"
             />
             <Project
               name="(Re)cycle"
-              image="./projects/re-cycle.png"
+              image="./projects/re-cycle.jpg"
               description="A simple 2d game about recycling built in bevy"
               link="https://github.com/Logan-010/re-cycle"
             />
             <Project
               name="mbrot"
-              image="./projects/mbrot.png"
+              image="./projects/mbrot.jpg"
               description="Simple to use CLI mandelbrot fractal generator."
               link="https://github.com/Logan-010/mbrot"
             />
@@ -72,7 +72,7 @@ export default function Portfolio() {
             />
             <Project
               name="Shaman"
-              image="./projects/shaman.png"
+              image="./projects/shaman.jpg"
               description="P2P on/offline password manager"
               link="https://github.com/Logan-010/shaman"
             />
@@ -90,7 +90,7 @@ export default function Portfolio() {
             />
             <Project
               name="Glerp"
-              image="./projects/glerp.png"
+              image="./projects/glerp.jpg"
               description="Dead simple audio recorder"
               link="https://github.com/Logan-010/glerp"
             />
@@ -102,7 +102,7 @@ export default function Portfolio() {
             />
             <Project
               name="thetachat"
-              image="./projects/thetachat.png"
+              image="./projects/thetachat.jpg"
               description="Secure decentralized chat protocol"
               link="https://github.com/Logan-010/thetachat"
             />
@@ -114,9 +114,15 @@ export default function Portfolio() {
             />
             <Project
               name="vobos"
-              image="./projects/vobos.png"
+              image="./projects/vobos.jpg"
               description="Smart and interactive desktop AI assistant"
               link="https://github.com/Logan-010/vobos"
+            />
+            <Project
+              name="RPWS"
+              image="./projects/rpws.jpg"
+              description="Reliable P2P password manager."
+              link="https://github.com/Logan-010/rpws"
             />
           </div>
         </div>
