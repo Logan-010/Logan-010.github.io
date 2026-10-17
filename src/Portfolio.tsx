@@ -47,16 +47,28 @@ export default function Portfolio() {
               link="https://github.com/Logan-010/Logan-010.github.io"
             />
             <Project
+              name="vobos"
+              image="./projects/vobos.jpg"
+              description="Smart and interactive desktop AI assistant"
+              link="https://github.com/Logan-010/vobos"
+            />
+            <Project
+              name="Linquo"
+              image="./projects/linquo.jpg"
+              description="AI powered offline language learning app."
+              link="https://github.com/Logan-010/linquo"
+            />
+            <Project
+              name="RPWS"
+              image="./projects/rpws.jpg"
+              description="Reliable P2P password manager."
+              link="https://github.com/Logan-010/rpws"
+            />
+            <Project
               name="mbrot"
               image="./projects/mbrot.jpg"
               description="Simple to use CLI mandelbrot fractal generator."
               link="https://github.com/Logan-010/mbrot"
-            />
-            <Project
-              name="ihnet2"
-              image={null}
-              description="Simple & secure CLI port forwarding to any computer in the world."
-              link="https://github.com/Logan-010/ihnet2"
             />
             <Project
               name="thetachat"
@@ -65,22 +77,16 @@ export default function Portfolio() {
               link="https://github.com/Logan-010/thetachat"
             />
             <Project
+              name="ihnet2"
+              image={null}
+              description="Simple & secure CLI port forwarding to any computer in the world."
+              link="https://github.com/Logan-010/ihnet2"
+            />
+            <Project
               name="oaks"
               image={null}
               description="Secure LAN file sharing in OCaml"
               link="https://github.com/Logan-010/oaks"
-            />
-            <Project
-              name="vobos"
-              image="./projects/vobos.jpg"
-              description="Smart and interactive desktop AI assistant"
-              link="https://github.com/Logan-010/vobos"
-            />
-            <Project
-              name="RPWS"
-              image="./projects/rpws.jpg"
-              description="Reliable P2P password manager."
-              link="https://github.com/Logan-010/rpws"
             />
             <Project
               name="(Re)cycle"
