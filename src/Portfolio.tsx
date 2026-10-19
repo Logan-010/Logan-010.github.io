@@ -41,12 +41,6 @@ export default function Portfolio() {
         <div class="mt-10 sm:mt-12">
           <div class="grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             <Project
-              name="This site"
-              image="./projects/portfolio.jpg"
-              description="A portfolio page"
-              link="https://github.com/Logan-010/Logan-010.github.io"
-            />
-            <Project
               name="vobos"
               image="./projects/vobos.jpg"
               description="Smart and interactive desktop AI assistant"
@@ -77,18 +71,6 @@ export default function Portfolio() {
               link="https://github.com/Logan-010/thetachat"
             />
             <Project
-              name="ihnet2"
-              image={null}
-              description="Simple & secure CLI port forwarding to any computer in the world."
-              link="https://github.com/Logan-010/ihnet2"
-            />
-            <Project
-              name="oaks"
-              image={null}
-              description="Secure LAN file sharing in OCaml"
-              link="https://github.com/Logan-010/oaks"
-            />
-            <Project
               name="(Re)cycle"
               image="./projects/re-cycle.jpg"
               description="A simple 2d game about recycling built in bevy"
@@ -101,28 +83,40 @@ export default function Portfolio() {
               link="https://github.com/Logan-010/mini.nz"
             />
             <Project
-              name="diary"
-              image={null}
-              description="A private, encrypted diary for your thoughts in your command line"
-              link="https://github.com/Logan-010/diary"
-            />
-            <Project
               name="Glerp"
               image="./projects/glerp.jpg"
               description="Dead simple audio recorder"
               link="https://github.com/Logan-010/glerp"
             />
             <Project
-              name="gshare"
-              image={null}
-              description="P2P file share across the globe"
-              link="https://github.com/Logan-010/gshare"
-            />
-            <Project
               name="Shaman"
               image="./projects/shaman.jpg"
               description="P2P on/offline password manager"
               link="https://github.com/Logan-010/shaman"
+            />
+            <Project
+              name="ihnet2"
+              image={null}
+              description="Simple & secure CLI port forwarding to any computer in the world."
+              link="https://github.com/Logan-010/ihnet2"
+            />
+            <Project
+              name="oaks"
+              image={null}
+              description="Secure LAN file sharing in OCaml"
+              link="https://github.com/Logan-010/oaks"
+            />
+            <Project
+              name="diary"
+              image={null}
+              description="A private, encrypted diary for your thoughts in your command line"
+              link="https://github.com/Logan-010/diary"
+            />
+            <Project
+              name="gshare"
+              image={null}
+              description="P2P file share across the globe"
+              link="https://github.com/Logan-010/gshare"
             />
             <Project
               name="htek"
