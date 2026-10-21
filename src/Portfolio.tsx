@@ -59,6 +59,12 @@ export default function Portfolio() {
               link="https://github.com/Logan-010/rpws"
             />
             <Project
+              name="heft"
+              image="./projects/heft.jpg"
+              description="A pure app for managing your personal financial assets."
+              link="https://github.com/Logan-010/heft"
+            />
+            <Project
               name="mbrot"
               image="./projects/mbrot.jpg"
               description="Simple to use CLI mandelbrot fractal generator."
