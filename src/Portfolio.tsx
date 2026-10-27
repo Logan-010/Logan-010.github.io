@@ -107,6 +107,12 @@ export default function Portfolio() {
               link="https://github.com/Logan-010/ihnet2"
             />
             <Project
+              name="capsul"
+              image={null}
+              description="Reliable and securee P2P file storage network"
+              link="https://github.com/Logan-010/capsul"
+            />
+            <Project
               name="oaks"
               image={null}
               description="Secure LAN file sharing in OCaml"
