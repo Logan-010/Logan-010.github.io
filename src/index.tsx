@@ -9,12 +9,14 @@ import About from './About';
 import Contact from './Contact';
 import Blog from './Blog';
 import BlogPost from './BlogPost';
+import Metadata from './Metadata';
 
 import './style.css';
 
 export function App() {
 	return (
 		<LocationProvider>
+			<Metadata />
 			<Nav />
 			<main class="flex flex-1 flex-col">
 				<Router>
