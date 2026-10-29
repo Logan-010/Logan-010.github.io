@@ -1,4 +1,5 @@
 import type { ComponentType } from 'preact';
+import { lazy } from 'preact-iso';
 
 export interface BlogEntry {
   id: number;
@@ -9,12 +10,17 @@ export interface BlogEntry {
 
 export const posts: BlogEntry[] = [
   // Hey future me--a blog post entry will look like this!
+  //
+  // ./posts/hello-world.tsx:
+  //
+  // export default function HelloWorld() {
+  //    return <p>Hello, world!</p>
+  // }
+  // 
   // {
   //   id: 1,
   //   title: 'Hello, world!',
   //   description: 'Welcome to the blog.',
-  //   Content: () => (
-  //     <p>Welcome to my blog!</p>
-  //   ),
+  //   Content: lazy(() => import('./posts/hello-world')),
   // },
 ];
