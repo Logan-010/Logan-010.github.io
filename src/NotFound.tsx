@@ -7,7 +7,7 @@ export default function NotFound() {
                     <p class="body-copy">{"Oops! Page not found."}</p>
                     <a
                         class="button"
-                        href="./"
+                        href="/"
                     >
                         {"Go home"}
                         <svg

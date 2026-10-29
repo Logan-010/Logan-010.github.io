@@ -5,11 +5,11 @@ export default function Nav() {
 
     return (
         <header class="sticky top-0 z-20 border-b border-line bg-canvas/95 backdrop-blur-md">
-            <nav class="page-shell flex items-center justify-center gap-1 py-3 sm:justify-end sm:gap-2">
+            <nav aria-label="Main navigation" class="page-shell flex flex-wrap items-center justify-center gap-1 py-3 sm:justify-end sm:gap-2">
                 <a
                     class="nav-link"
                     aria-current={path === '/' ? 'page' : undefined}
-                    href="./"
+                    href="/"
                     rel="ugc"
                 >
                     {" Home \u{1F3E0} "}
@@ -17,7 +17,7 @@ export default function Nav() {
                 <a
                     class="nav-link"
                     aria-current={path === '/portfolio' ? 'page' : undefined}
-                    href="./portfolio"
+                    href="/portfolio"
                     rel="ugc"
                 >
                     {" Portfolio \u{1F4BB} "}
@@ -25,7 +25,7 @@ export default function Nav() {
                 <a
                     class="nav-link"
                     aria-current={path === '/about' ? 'page' : undefined}
-                    href="./about"
+                    href="/about"
                     rel="ugc"
                 >
                     {" About \u{2728} "}
@@ -33,10 +33,17 @@ export default function Nav() {
                 <a
                     class="nav-link"
                     aria-current={path === '/contact' ? 'page' : undefined}
-                    href="./contact"
+                    href="/contact"
                     rel="ugc"
                 >
                     {" Contact \u{1F4D6} "}
+                </a>
+                <a
+                    class="nav-link"
+                    aria-current={path === '/blog' || path.startsWith('/blob/') ? 'page' : undefined}
+                    href="/blog"
+                >
+                    {" Blog \u{1F4DD} "}
                 </a>
             </nav>
         </header>
