@@ -13,6 +13,14 @@ export default function Blog() {
                 <h2 class="text-xl font-semibold tracking-tight group-hover:underline underline-offset-4">
                   {post.title}
                 </h2>
+                <time class="text-sm text-muted" dateTime={post.date}>
+                  {new Date(`${post.date}T00:00:00Z`).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    timeZone: 'UTC',
+                  })}
+                </time>
                 <p class="body-copy">{post.description}</p>
                 <span class="text-sm font-medium">Read post <span aria-hidden="true">→</span></span>
               </a>

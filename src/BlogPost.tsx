@@ -18,6 +18,14 @@ export default function BlogPost() {
       <article class="mt-8 sm:mt-10">
         <header class="mb-8 sm:mb-10">
           <h1 class="page-title">{post.title}</h1>
+          <time class="mt-3 block text-sm text-muted" dateTime={post.date}>
+            {new Date(`${post.date}T00:00:00Z`).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              timeZone: 'UTC',
+            })}
+          </time>
           <p class="body-copy mt-5">{post.description}</p>
         </header>
         <div class="blog-content body-copy">
