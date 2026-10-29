@@ -23,4 +23,10 @@ export const posts: BlogEntry[] = [
   //   description: 'Welcome to the blog.',
   //   Content: lazy(() => import('./posts/hello-world')),
   // },
+  {
+    id: 1,
+    title: 'The Mandelbrot Fractal',
+    description: 'A facinating and beautiful formula',
+    Content: lazy(() => import('./posts/the-mandelbrot-fractal')),
+  }
 ];
