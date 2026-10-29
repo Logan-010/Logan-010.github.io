@@ -4,5 +4,15 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [preact(), tailwindcss()],
+	plugins: [
+		preact({
+			prerender: {
+				enabled: true,
+				renderTarget: '#app',
+				previewMiddlewareEnabled: true,
+				previewMiddlewareFallback: '/404',
+			},
+		}),
+		tailwindcss(),
+	],
 });

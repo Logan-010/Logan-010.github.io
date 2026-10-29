@@ -7,7 +7,7 @@ export default function Home() {
 
                         <div class="order-1 flex justify-center lg:order-2 lg:justify-end">
                             <img
-                                src="./logan.jpg"
+                                src="/logan.jpg"
                                 width="400"
                                 height="400"
                                 alt="Logan Briesemeister"

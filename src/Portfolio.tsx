@@ -1,9 +1,16 @@
+interface ProjectProps {
+  name: string;
+  image: string | null;
+  description: string;
+  link: string;
+}
+
 function Project({
   name,
   image,
   description,
   link,
-}) {
+}: ProjectProps) {
   return (
     <a class="project-card group" target="_blank" href={link}>
         {image && (
@@ -42,61 +49,61 @@ export default function Portfolio() {
           <div class="grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             <Project
               name="vobos"
-              image="./projects/vobos.jpg"
+              image="/projects/vobos.jpg"
               description="Smart and interactive desktop AI assistant"
               link="https://github.com/Logan-010/vobos"
             />
             <Project
               name="Linquo"
-              image="./projects/linquo.jpg"
+              image="/projects/linquo.jpg"
               description="AI powered offline language learning app."
               link="https://github.com/Logan-010/linquo"
             />
             <Project
               name="RPWS"
-              image="./projects/rpws.jpg"
+              image="/projects/rpws.jpg"
               description="Reliable P2P password manager."
               link="https://github.com/Logan-010/rpws"
             />
             <Project
               name="heft"
-              image="./projects/heft.jpg"
+              image="/projects/heft.jpg"
               description="A pure app for managing your personal financial assets."
               link="https://github.com/Logan-010/heft"
             />
             <Project
               name="mbrot"
-              image="./projects/mbrot.jpg"
+              image="/projects/mbrot.jpg"
               description="Simple to use CLI mandelbrot fractal generator."
               link="https://github.com/Logan-010/mbrot"
             />
             <Project
               name="thetachat"
-              image="./projects/thetachat.jpg"
+              image="/projects/thetachat.jpg"
               description="Secure decentralized chat protocol"
               link="https://github.com/Logan-010/thetachat"
             />
             <Project
               name="(Re)cycle"
-              image="./projects/re-cycle.jpg"
+              image="/projects/re-cycle.jpg"
               description="A simple 2d game about recycling built in bevy"
               link="https://github.com/Logan-010/re-cycle"
             />
             <Project
               name="Mini.nz"
-              image="./projects/mini-nz.jpg"
+              image="/projects/mini-nz.jpg"
               description="Lightweight file upload service written in Go"
               link="https://github.com/Logan-010/mini.nz"
             />
             <Project
               name="Glerp"
-              image="./projects/glerp.jpg"
+              image="/projects/glerp.jpg"
               description="Dead simple audio recorder"
               link="https://github.com/Logan-010/glerp"
             />
             <Project
               name="Shaman"
-              image="./projects/shaman.jpg"
+              image="/projects/shaman.jpg"
               description="P2P on/offline password manager"
               link="https://github.com/Logan-010/shaman"
             />
