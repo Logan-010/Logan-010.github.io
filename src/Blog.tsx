@@ -4,6 +4,7 @@ export default function Blog() {
   return (
     <div class="page-shell page-section flex max-w-4xl flex-col gap-10 sm:gap-12">
       <h1 class="page-title">Blog</h1>
+      <a class="button w-fit" href="/rss.xml" target="_blank" rel="noopener noreferrer">Subscribe via RSS</a>
 
       {posts.length > 0 ? (
         <ul class="space-y-5">

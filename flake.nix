@@ -6,7 +6,7 @@
   };
 
   outputs =
-    { nixpkgs, fenix, ... }:
+    { nixpkgs, ... }:
     let
       systems = [
         "x86_64-linux"
@@ -15,28 +15,24 @@
         "aarch64-darwin"
       ];
 
-      forAllSystems =
-        f:
-        nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system} fenix.packages.${system});
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
     in
     {
-      devShells = forAllSystems (
-        pkgs: fenixPkgs: {
-          default = pkgs.mkShell {
-            packages = with pkgs; [
-              # JavaScript / TypeScript
-              nodejs_26
-              typescript
-              typescript-language-server
+      devShells = forAllSystems (pkgs: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            # JavaScript / TypeScript
+            nodejs_26
+            typescript
+            typescript-language-server
 
-              # Development tools
-              pkg-config
-              openssl
-              git
-              gnumake
-            ];
-          };
-        }
-      );
+            # Development tools
+            pkg-config
+            openssl
+            git
+            gnumake
+          ];
+        };
+      });
     };
 }
