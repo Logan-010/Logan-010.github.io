@@ -1,9 +1,9 @@
 export default function TheMandelbrotFractal() {
   return (
     <>
-      <img src="/blog/the-mandelbrot-fractal/brot-1.jpg" loading="lazy" />
+      <img alt="A fractal" src="/blog/the-mandelbrot-fractal/brot-1.jpg" loading="lazy" />
       <p>
-        The mandelbrot fractal is an extremely interesting little mathmatical
+        The mandelbrot fractal is an extremely interesting little mathematical
         wonder. It's a simple formula, defined as:
       </p>
       <p>
@@ -61,9 +61,9 @@ export default function TheMandelbrotFractal() {
         all the numbers in the set.
       </p>
       <p>
-        Genearlly, image renderings show the real part of the complex number on
+        Generally, image renderings show the real part of the complex number on
         the x axis, and the imaginary part on the y axis. The complex numbers
-        represented by re + im are now mapped to (x,y) cordinates via (re, im).
+        represented by re + im are now mapped to (x,y) coordinates via (re, im).
       </p>
       <p>
         Then, we calculate if the number is part of the set and color it if it
@@ -73,7 +73,7 @@ export default function TheMandelbrotFractal() {
         But then if we just plot the image we get a really generic black and
         white photo... what gives?
       </p>
-      <img src="/blog/the-mandelbrot-fractal/brot-2.jpg" loading="lazy" />
+      <img alt="A fractal" src="/blog/the-mandelbrot-fractal/brot-2.jpg" loading="lazy" />
       <p>
         Well yeah, but this is all still theoretical. After all our function
         cannot possibly actually iterate to infinity.
@@ -85,9 +85,9 @@ export default function TheMandelbrotFractal() {
       </p>
       <p>
         This spices up rendering quite a bit, and also makes it actually
-        possible to render since we're not going all the way to inifnity!
+        possible to render since we're not going all the way to infinity!
       </p>
-      <img src="/blog/the-mandelbrot-fractal/brot-3.jpg" loading="lazy" />
+      <img alt="A fractal" src="/blog/the-mandelbrot-fractal/brot-3.jpg" loading="lazy" />
       <p>
         Great... now we have colorful renderings of the mandelbrot fractal! It's
         worth noting that any value outside the range of Re [-2.5, 1] and Im
@@ -95,7 +95,7 @@ export default function TheMandelbrotFractal() {
         shown, the numbers all lie within this range.
       </p>
       <p>
-        Now it gets really intersting. We can 'zoom in' on the fractal on any
+        Now it gets really interesting . We can 'zoom in' on the fractal on any
         given point where there's 'activity' and start to see some truly
         incredible patterns emmerge.
       </p>
@@ -112,9 +112,9 @@ export default function TheMandelbrotFractal() {
         the actual real rendering algorithom
       </p>
       <p>Anyway, as a send off, here's some cool fractals.</p>
-      <img src="/blog/the-mandelbrot-fractal/brot-4.jpg" loading="lazy" />
-      <img src="/blog/the-mandelbrot-fractal/brot-5.jpg" loading="lazy" />
-      <img src="/blog/the-mandelbrot-fractal/brot-6.jpg" loading="lazy" />
+      <img alt="A fractal" src="/blog/the-mandelbrot-fractal/brot-4.jpg" loading="lazy" />
+      <img alt="A fractal" src="/blog/the-mandelbrot-fractal/brot-5.jpg" loading="lazy" />
+      <img alt="A fractal" src="/blog/the-mandelbrot-fractal/brot-6.jpg" loading="lazy" />
     </>
   );
 }

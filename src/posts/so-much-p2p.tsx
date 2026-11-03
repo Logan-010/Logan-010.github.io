@@ -13,12 +13,16 @@ export default function SoMuchP2P() {
       <p>
         Our first subject: IPFS.
       </p>
+
+      <img loading="lazy" src="/blog/so-much-p2p/kubo.jpg" alt="Kubo WebUI" />
+      <p class="text-xs">Screenshot from Kubo, a IPFS client.</p>
+
       <p>
         IPFS (the Inter-Planetary File System, <a href="https://www.spacequarter.com/lockheed-martin-and-filecoin-foundation-innovate-ipfs-technology-for-space-exploration/" target="_blank">and yes, this really is used in-between planets!</a>)
-        is one of the largest P2P networks in known existance. IPFS runs a content-addressed network on
-        millions of devices. Peers publish a list of CIDs (file/content hashes) which they posess and then
+        is one of the largest P2P networks in known existence. IPFS runs a content-addressed network on
+        millions of devices. Peers publish a list of CIDs (file/content hashes) which they possesses and then
         other peers use this published data to find who has what data. Then any peer that knows the hash of
-        some content, for example a file or website, can aquire that data from any peer on the network who
+        some content, for example a file or website, can acquire that data from any peer on the network who
         has the content.
       </p>
       <p>
@@ -32,7 +36,7 @@ export default function SoMuchP2P() {
         still communicate with eachother since they're just using the same protocol under the hood.
       </p>
       <p>
-        Maybe I'm a little biased... but LibP2P is probally the best and most comprehensive full P2P framework that exists.
+        Maybe I'm a little biased... but LibP2P is probably the best and most comprehensive full P2P framework that exists.
       </p>
       <p>
         The LibP2P project itself provides many official implementations across varying languages, such as <a href="https://libp2p.io/docs/getting-started/go/" target="_blank">Go</a>,
@@ -79,8 +83,12 @@ func main() {
       <p>
         Next up, <a target="_blank" href="https://www.bittorrent.com/">Bittorrent</a>.
       </p>
+
+      <img loading="lazy" src="/blog/so-much-p2p/transmission.jpg" alt="Transmission downloading a movie" />
+      <p class="text-xs">Screenshot from Transmission, a torrent client.</p>
+
       <p>
-        If you've not heard of Bittorrent or torrenting, you've probally been living in the woods. It's safe to say Bittorrent is the most
+        If you've not heard of Bittorrent or torrenting, you've probably been living in the woods. It's safe to say Bittorrent is the most
         famous (for good or bad) P2P protocol ever. Bittorrent is a file sharing P2P protocol that allows peers to download files from other
         peers (called seeders) at the same time rather than downloading a file from a single source. Peers then share chunks that they already
         have amongst one-another which results in fast and distributed file sharing.
@@ -106,11 +114,15 @@ func main() {
       <p>
         Bittorrent is an established and very well-used protocol in the P2P space, and it's not going anywhere. But since it's really only designed
         for file-sharing it limits the use to be for, well, file-sharing. Additionally, many ISPs or networks block Bittorrent as a whole due to its
-        link to media piracy, even though the protocol itself is innocent and has many legitamate uses.
+        link to media piracy, even though the protocol itself is innocent and has many legitimate uses.
       </p>
       <p>
         My final focus in this article, is an up and coming P2P library called <a target="_blank" href="https://iroh.computer">Iroh</a>.
       </p>
+    
+      <img loading="lazy" src="/blog/so-much-p2p/sendme.gif" alt="Sending a file with Sendme" />
+      <p class="text-xs">Using <a href="https://www.iroh.computer/sendme" target="_blank">sendme</a>, an Iroh-based file sharing program.</p>
+
       <p>
         Iroh runs on a simple principle: "IP addresses break, dial keys instead". Uh... okay? What does this mean? You may ask. Well, the way Iroh works
         is somewhat different.
@@ -118,12 +130,29 @@ func main() {
       <p>
         Iroh is not exactly a pure P2P framework, as it relies on some centralization. Iroh clients need some sort of peer discovery method (well, not just iroh,
         P2P in general), and those methods all need some sort of centralization. Iroh clients connect to some sort of relay (by default N0's public relay) and
-        announce their public key, which is a asymetric cryptographic key that identifies the peer on the network. Then, other clients can just contact the relay
+        announce their public key, which is a asymmetric cryptographic key that identifies the peer on the network. Then, other clients can just contact the relay
         and ask for how they can connect to a given peer's key. In an optimal world, the relay temporarily lets peers send data over itself before a direct P2P connection
         can be made between the two peers over QUIC (NAT hole punching, IP address discovery, etc). Then the relay would drop the connection and just let the peers
         talk with eachother directly. However, if this direct connection fails, the relay will continue to... relay the data between the peers. Although Iroh peers
         can communicate without using a relay (IE, through MDNS or direct public IPs), the core point of Iroh is simple and reliable connections between peers which
         may or may not be behind a relay.
+      </p>
+      <p>
+        In theory, this sounds great! You can have P2P connectivity when it's possible, and when its not you can still connect to a device through a relay. And it practice,
+        its also (usually) great. The only downsides on the actual application side is the centralization of peer discovery, as even though alternatives exist, it still is
+        second class (as of now... N0 is adding new experimental transports and peer discovery such as using Bittorrents Mainline DHT). However, there's another small downside,
+        which is that it's really just a Rust library. While FFI bindings for other languages like Go and Javascript exist, they're certainly less polished and nice to use than
+        the main Rust implementation. For Rust developers (including myself), this isn't a problem as I use the language anyway. But for many who don't, they're unable to use
+        Iroh except through (currently) shaky FFI bindings and cannot communicate with Iroh devices as opposed to LibP2P which has complete cross-language compatibility.
+      </p>
+      <p>
+        I certainly don't want to make Iroh sound unmaintained or unusable. It's an extremely useful framework that I've built applications in, such as <a href="https://github.com/Logan-010/capsul">capsul</a>,
+        a reliable P2P file storage system.
+      </p>
+      <p>
+        To conclude, theres a LOT of P2P technologies found in the wild, much of it is easier and more accessible than ever to both developers and users. Long gone are the
+        days of extremely complicated, DIY, and broken P2P networks developers have to hand-roll themselves. Instead, they can reach for an already existing framework or
+        library and just start building. There's still a long way to go, but I believe we're in the golden age of P2P. 
       </p>
     </>
   )
