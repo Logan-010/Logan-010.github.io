@@ -1,5 +1,6 @@
 import type { ComponentType } from 'preact';
 import { lazy } from 'preact-iso';
+import postMetadata from './posts.json';
 
 export interface BlogEntry {
   id: number;
@@ -9,34 +10,7 @@ export interface BlogEntry {
   Content: ComponentType;
 }
 
-export const posts: BlogEntry[] = [
-  // Hey future me--a blog post entry will look like this!
-  //
-  // ./posts/hello-world.tsx:
-  //
-  // export default function HelloWorld() {
-  //    return <p>Hello, world!</p>
-  // }
-  // 
-  // {
-  //   id: 1,
-  //   title: 'Hello, world!',
-  //   description: 'Welcome to the blog.',
-  //   date: '2026-10-29',
-  //   Content: lazy(() => import('./posts/hello-world')),
-  // },
-  {
-    id: 1,
-    title: 'The Mandelbrot Fractal',
-    description: 'A facinating and beautiful formula',
-    date: '2026-10-29',
-    Content: lazy(() => import('./posts/the-mandelbrot-fractal')),
-  },
-  {
-    id: 2,
-    title: 'So Much P2P',
-    description: 'The state of P2P connectivity in the wild',
-    date: '2026-11-03',
-    Content: lazy(() => import('./posts/so-much-p2p')),
-  }
-];
+export const posts: BlogEntry[] = postMetadata.map((post) => ({
+  ...post,
+  Content: lazy(() => import(`./posts/${post.slug}.tsx`)),
+}));

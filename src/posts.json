@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "slug": "the-mandelbrot-fractal",
+    "title": "The Mandelbrot Fractal",
+    "description": "A facinating and beautiful formula",
+    "date": "2026-10-29"
+  },
+  {
+    "id": 2,
+    "slug": "so-much-p2p",
+    "title": "So Much P2P",
+    "description": "The state of P2P connectivity in the wild",
+    "date": "2026-11-03"
+  }
+]
