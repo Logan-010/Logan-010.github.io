@@ -12,7 +12,44 @@
       <guid isPermaLink="true">https://logan-010.github.io/blog/2/</guid>
       <pubDate>Tue, 03 Nov 2026 00:00:00 GMT</pubDate>
       <description>The state of P2P connectivity in the wild</description>
-      <content:encoded>&lt;p&gt;Peer to peer is everywhere, even when we don&apos;t really expect it. Video conferencing, many file sharing programs, some games, all P2P! This technology has advanced an enormous amount since limewire and the old days of using bittorrent.&lt;/p&gt;&lt;p&gt;But I&apos;m not going to go over the long history of P2P and its use in the world--I just want to focus on the current state of P2P and the tech behind it.&lt;/p&gt;&lt;p&gt;Our first subject: IPFS.&lt;/p&gt;&lt;img loading=&quot;lazy&quot; src=&quot;https://logan-010.github.io/blog/so-much-p2p/kubo.jpg&quot; alt=&quot;Kubo WebUI&quot;/&gt;&lt;p class=&quot;text-xs&quot;&gt;Screenshot from Kubo, a IPFS client.&lt;/p&gt;&lt;p&gt;IPFS (the Inter-Planetary File System, &lt;a href=&quot;https://www.spacequarter.com/lockheed-martin-and-filecoin-foundation-innovate-ipfs-technology-for-space-exploration/&quot; target=&quot;_blank&quot;&gt;and yes, this really is used in-between planets!&lt;/a&gt;) is one of the largest P2P networks in known existence. IPFS runs a content-addressed network on millions of devices. Peers publish a list of CIDs (file/content hashes) which they possesses and then other peers use this published data to find who has what data. Then any peer that knows the hash of some content, for example a file or website, can acquire that data from any peer on the network who has the content.&lt;/p&gt;&lt;p&gt;That&apos;s a bit of a mouthfull, but IPFS itself runs on an internal P2P library called &lt;a href=&quot;https://libp2p.io/&quot; target=&quot;_blank&quot;&gt;LibP2P&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;LibP2P is a cross-language modular framework for P2P connections over a variety of transport protocols for a variety of data protocols. LibP2P itself is a collection of standardized data specifications declaring how the devices should communicate, the actual implementations themself only have to conform to the specification to communicate with other devices using LibP2P. Because of this, devices running LibP2P in different languages can still communicate with eachother since they&apos;re just using the same protocol under the hood.&lt;/p&gt;&lt;p&gt;Maybe I&apos;m a little biased... but LibP2P is probably the best and most comprehensive full P2P framework that exists.&lt;/p&gt;&lt;p&gt;The LibP2P project itself provides many official implementations across varying languages, such as &lt;a href=&quot;https://libp2p.io/docs/getting-started/go/&quot; target=&quot;_blank&quot;&gt;Go&lt;/a&gt;, &lt;a href=&quot;https://libp2p.io/docs/getting-started/rust/&quot; target=&quot;_blank&quot;&gt;Rust&lt;/a&gt;, &lt;a href=&quot;https://libp2p.io/docs/getting-started/javascript/&quot; target=&quot;_blank&quot;&gt;Javascript/Typescript&lt;/a&gt;, and even &lt;a href=&quot;https://libp2p.io/docs/getting-started/nim/&quot; target=&quot;_blank&quot;&gt;Nim&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Because of the agnosticity of the framework, there&apos;s an &lt;a href=&quot;https://github.com/libp2p/awesome-libp2p&quot; target=&quot;_blank&quot;&gt;abundance of applications&lt;/a&gt; built in LibP2P&lt;/p&gt;&lt;p&gt;Let&apos;s look at some code! Here&apos;s a basic example taken from LibP2P&apos;s go examples.&lt;/p&gt;&lt;pre class=&quot;bg-zinc-900 text-zinc-100 p-4 rounded-lg overflow-x-auto text-sm font-mono&quot;&gt;&lt;code&gt;package main
+      <content:encoded>&lt;p&gt;Peer to peer is everywhere, even when we don&amp;#39;t really expect it. Video
+conferencing, many file sharing programs, some games, all P2P! This technology
+has advanced an enormous amount since Limewire and the old days of using
+BitTorrent.&lt;/p&gt;
+&lt;p&gt;But I&amp;#39;m not going to go over the long history of P2P and its use in the world–I
+just want to focus on the current state of P2P and the tech behind it.&lt;/p&gt;
+&lt;p&gt;Our first subject: IPFS.&lt;/p&gt;
+&lt;img loading=&quot;lazy&quot; src=&quot;https://logan-010.github.io/blog/so-much-p2p/kubo.jpg&quot; alt=&quot;Kubo WebUI&quot; /&gt;&lt;p class=&quot;text-xs&quot;&gt;Screenshot from Kubo, a IPFS client.&lt;/p&gt;&lt;p&gt;IPFS (the interplanetary filesystem,
+&lt;a href=&quot;https://www.spacequarter.com/lockheed-martin-and-filecoin-foundation-innovate-ipfs-technology-for-space-exploration/&quot; target=&quot;_blank&quot;&gt;and
+yes, this really is used in-between planets!&lt;/a&gt;) is one of the largest P2P
+networks in known existence. IPFS runs a content-addressed network on millions
+of devices. Peers publish a list of CIDs (file/content hashes) which they
+possess and then other peers use this published data to find who has what data.
+Then any peer that knows the hash of some content, for example a file or
+website, can acquire that data from any peer on the network who has the content.&lt;/p&gt;
+&lt;p&gt;That&amp;#39;s a bit of a mouthful, but IPFS itself runs on an internal P2P library
+called &lt;a href=&quot;https://libp2p.io/&quot; target=&quot;_blank&quot;&gt;LibP2P&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;LibP2P is a cross-language modular framework for P2P connections over a variety
+of transport protocols for a variety of data protocols. LibP2P itself is a
+collection of standardized data specifications declaring how the devices should
+communicate, the actual implementations them self only have to conform to the
+specification to communicate with other devices using LibP2P. Because of this,
+devices running LibP2P in different languages can still communicate with each
+other since they&amp;#39;re just using the same protocol under the hood.&lt;/p&gt;
+&lt;p&gt;Maybe I&amp;#39;m a little biased… but LibP2P is probably the best and most
+comprehensive full P2P framework that exists.&lt;/p&gt;
+&lt;p&gt;The LibP2P project itself provides many official implementations across varying
+languages, such as
+&lt;a href=&quot;https://libp2p.io/docs/getting-started/go/&quot; target=&quot;_blank&quot;&gt;Go&lt;/a&gt;,
+&lt;a href=&quot;https://libp2p.io/docs/getting-started/rust/&quot; target=&quot;_blank&quot;&gt;Rust&lt;/a&gt;,
+&lt;a href=&quot;https://libp2p.io/docs/getting-started/javascript/&quot; target=&quot;_blank&quot;&gt;JavaScript/TypeScript&lt;/a&gt;,
+and even
+&lt;a href=&quot;https://libp2p.io/docs/getting-started/nim/&quot; target=&quot;_blank&quot;&gt;Nim&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Because of the agnosticism of the framework, there&amp;#39;s an
+&lt;a href=&quot;https://github.com/libp2p/awesome-libp2p&quot; target=&quot;_blank&quot;&gt;abundance of
+applications&lt;/a&gt; built in LibP2P&lt;/p&gt;
+&lt;p&gt;Let&amp;#39;s look at some code! Here&amp;#39;s a basic example taken from LibP2P go examples.&lt;/p&gt;
+&lt;pre class=&quot;bg-zinc-900 text-zinc-100 p-4 rounded-lg overflow-x-auto text-sm font-mono&quot;&gt;&lt;code&gt;package main
 
 import (
     &amp;quot;fmt&amp;quot;
@@ -26,14 +63,92 @@ func main() {
         panic(err)
     }
 
-    // print the node&apos;s listening addresses
+    // print the node&amp;apos;s listening addresses
     fmt.Println(&amp;quot;Listen addresses:&amp;quot;, node.Addrs())
 
     // shut the node down
     if err := node.Close(); err != nil {
         panic(err)
     }
-}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Thats it! Although this example only listens on local addresses and prints them, it shows how simple the framework can be to use. Theres far more that can be done, from NAT traversal to a DHT, the list goes on.&lt;/p&gt;&lt;p&gt;Next up, &lt;a target=&quot;_blank&quot; href=&quot;https://www.bittorrent.com/&quot;&gt;Bittorrent&lt;/a&gt;.&lt;/p&gt;&lt;img loading=&quot;lazy&quot; src=&quot;https://logan-010.github.io/blog/so-much-p2p/transmission.jpg&quot; alt=&quot;Transmission downloading a movie&quot;/&gt;&lt;p class=&quot;text-xs&quot;&gt;Screenshot from Transmission, a torrent client.&lt;/p&gt;&lt;p&gt;If you&apos;ve not heard of Bittorrent or torrenting, you&apos;ve probably been living in the woods. It&apos;s safe to say Bittorrent is the most famous (for good or bad) P2P protocol ever. Bittorrent is a file sharing P2P protocol that allows peers to download files from other peers (called seeders) at the same time rather than downloading a file from a single source. Peers then share chunks that they already have amongst one-another which results in fast and distributed file sharing.&lt;/p&gt;&lt;p&gt;But the imfamy of Bittorrent and torrenting in general does not come from how useful it can be, it comes from pirates. While I&apos;m not going to pass judgement on those who sail the high seas (after all, we&apos;ve all wanted free movies before...), it&apos;s worth noting that since Piracy is illegal torrenting has become quite a hot topic in the media.&lt;/p&gt;&lt;p&gt;There are thousands, likely tens of thousands, of sites hosting torrent files (or magnet links) for pirated content that users can use to download copyrighted content through their favorite Bittorrent client. The most famous of which is The Pirate Bay.&lt;/p&gt;&lt;p&gt;But anyway, this article isn&apos;t about piracy, its about P2P.&lt;/p&gt;&lt;p&gt;Bittorrent is generally used for file sharing as it&apos;s a single protocol rather than a whole modular framework like LibP2P, however the individual components can still be used for general P2P. For example, the Mainline DHT used for content discovery, can be used by itself rather than exclusively for file-sharing over Bittorrent. Since the specification is public, anyone can write their own implementation and communicate with the Bittorrent DHT (for example, &lt;a href=&quot;https://crates.io/crates/n0-mainline&quot; target=&quot;_blank&quot;&gt;N0&apos;s implementation&lt;/a&gt;).&lt;/p&gt;&lt;p&gt;Bittorrent is an established and very well-used protocol in the P2P space, and it&apos;s not going anywhere. But since it&apos;s really only designed for file-sharing it limits the use to be for, well, file-sharing. Additionally, many ISPs or networks block Bittorrent as a whole due to its link to media piracy, even though the protocol itself is innocent and has many legitimate uses.&lt;/p&gt;&lt;p&gt;My final focus in this article, is an up and coming P2P library called &lt;a target=&quot;_blank&quot; href=&quot;https://iroh.computer&quot;&gt;Iroh&lt;/a&gt;.&lt;/p&gt;&lt;img loading=&quot;lazy&quot; src=&quot;https://logan-010.github.io/blog/so-much-p2p/sendme.gif&quot; alt=&quot;Sending a file with Sendme&quot;/&gt;&lt;p class=&quot;text-xs&quot;&gt;Using &lt;a href=&quot;https://www.iroh.computer/sendme&quot; target=&quot;_blank&quot;&gt;sendme&lt;/a&gt;, an Iroh-based file sharing program.&lt;/p&gt;&lt;p&gt;Iroh runs on a simple principle: &amp;quot;IP addresses break, dial keys instead&amp;quot;. Uh... okay? What does this mean? You may ask. Well, the way Iroh works is somewhat different.&lt;/p&gt;&lt;p&gt;Iroh is not exactly a pure P2P framework, as it relies on some centralization. Iroh clients need some sort of peer discovery method (well, not just iroh, P2P in general), and those methods all need some sort of centralization. Iroh clients connect to some sort of relay (by default N0&apos;s public relay) and announce their public key, which is a asymmetric cryptographic key that identifies the peer on the network. Then, other clients can just contact the relay and ask for how they can connect to a given peer&apos;s key. In an optimal world, the relay temporarily lets peers send data over itself before a direct P2P connection can be made between the two peers over QUIC (NAT hole punching, IP address discovery, etc). Then the relay would drop the connection and just let the peers talk with eachother directly. However, if this direct connection fails, the relay will continue to... relay the data between the peers. Although Iroh peers can communicate without using a relay (IE, through MDNS or direct public IPs), the core point of Iroh is simple and reliable connections between peers which may or may not be behind a relay.&lt;/p&gt;&lt;p&gt;In theory, this sounds great! You can have P2P connectivity when it&apos;s possible, and when its not you can still connect to a device through a relay. And it practice, its also (usually) great. The only downsides on the actual application side is the centralization of peer discovery, as even though alternatives exist, it still is second class (as of now... N0 is adding new experimental transports and peer discovery such as using Bittorrents Mainline DHT). However, there&apos;s another small downside, which is that it&apos;s really just a Rust library. While FFI bindings for other languages like Go and Javascript exist, they&apos;re certainly less polished and nice to use than the main Rust implementation. For Rust developers (including myself), this isn&apos;t a problem as I use the language anyway. But for many who don&apos;t, they&apos;re unable to use Iroh except through (currently) shaky FFI bindings and cannot communicate with Iroh devices as opposed to LibP2P which has complete cross-language compatibility.&lt;/p&gt;&lt;p&gt;I certainly don&apos;t want to make Iroh sound unmaintained or unusable. It&apos;s an extremely useful framework that I&apos;ve built applications in, such as &lt;a href=&quot;https://github.com/Logan-010/capsul&quot;&gt;capsul&lt;/a&gt;, a reliable P2P file storage system.&lt;/p&gt;&lt;p&gt;To conclude, theres a LOT of P2P technologies found in the wild, much of it is easier and more accessible than ever to both developers and users. Long gone are the days of extremely complicated, DIY, and broken P2P networks developers have to hand-roll themselves. Instead, they can reach for an already existing framework or library and just start building. There&apos;s still a long way to go, but I believe we&apos;re in the golden age of P2P.&lt;/p&gt;</content:encoded>
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&amp;#39;s it! Although this example only listens on local addresses and prints
+them, it shows how simple the framework can be to use. There&amp;#39;s far more that can
+be done, from NAT traversal to a DHT, the list goes on.&lt;/p&gt;
+&lt;p&gt;Next up, &lt;a target=&quot;_blank&quot; href=&quot;https://www.bittorrent.com/&quot;&gt;BitTorrent&lt;/a&gt;.&lt;/p&gt;
+&lt;img loading=&quot;lazy&quot; src=&quot;https://logan-010.github.io/blog/so-much-p2p/transmission.jpg&quot; alt=&quot;Transmission downloading a movie&quot; /&gt;&lt;p class=&quot;text-xs&quot;&gt;Screenshot from Transmission, a torrent client.&lt;/p&gt;&lt;p&gt;If you&amp;#39;ve not heard of BitTorrent or torrenting, you&amp;#39;ve probably been living in
+the woods. It&amp;#39;s safe to say BitTorrent is the most famous (for good or bad) P2P
+protocol ever. BitTorrent is a file sharing P2P protocol that allows peers to
+download files from other peers (called seeders) at the same time rather than
+downloading a file from a single source. Peers then share chunks that they
+already have amongst one-another which results in fast and distributed file
+sharing.&lt;/p&gt;
+&lt;p&gt;But the infamy of BitTorrent and torrenting in general does not come from how
+useful it can be, it comes from pirates. While I&amp;#39;m not going to pass judgment on
+those who sail the high seas (after all, we&amp;#39;ve all wanted free movies before…),
+it&amp;#39;s worth noting that since Piracy is illegal torrenting has become quite a hot
+topic in the media.&lt;/p&gt;
+&lt;p&gt;There are thousands, likely tens of thousands, of sites hosting torrent files
+(or magnet links) for pirated content that users can use to download copyrighted
+content through their favorite BitTorrent client. The most famous of which is
+The Pirate Bay.&lt;/p&gt;
+&lt;p&gt;But anyway, this article isn&amp;#39;t about piracy, its about P2P.&lt;/p&gt;
+&lt;p&gt;BitTorrent is generally used for file sharing as it&amp;#39;s a single protocol rather
+than a whole modular framework like LibP2P, however the individual components
+can still be used for general P2P. For example, the Mainline DHT used for
+content discovery, can be used by itself rather than exclusively for
+file-sharing over BitTorrent. Since the specification is public, anyone can
+write their own implementation and communicate with the BitTorrent DHT (for
+example, &lt;a href=&quot;https://crates.io/crates/n0-mainline&quot; target=&quot;_blank&quot;&gt;N0&amp;#39;s
+implementation&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;BitTorrent is an established and very well-used protocol in the P2P space, and
+it&amp;#39;s not going anywhere. But since it&amp;#39;s really only designed for file-sharing it
+limits the use to be for, well, file-sharing. Additionally, many ISP&amp;#39;s or
+networks block BitTorrent as a whole due to its link to media piracy, even
+though the protocol itself is innocent and has many legitimate uses.&lt;/p&gt;
+&lt;p&gt;My final focus in this article, is an up and coming P2P library called
+&lt;a target=&quot;_blank&quot; href=&quot;https://iroh.computer&quot;&gt;Iroh&lt;/a&gt;.&lt;/p&gt;
+&lt;img loading=&quot;lazy&quot; src=&quot;https://logan-010.github.io/blog/so-much-p2p/sendme.gif&quot; alt=&quot;Sending a file with Sendme&quot; /&gt;&lt;p class=&quot;text-xs&quot;&gt;Using &lt;a href=&quot;https://www.iroh.computer/sendme&quot; target=&quot;_blank&quot;&gt;sendme&lt;/a&gt;, an Iroh-based file sharing program.&lt;/p&gt;&lt;p&gt;Iroh runs on a simple principle: &amp;quot;IP addresses break, dial keys instead&amp;quot;. Uh…
+okay? What does this mean? You may ask. Well, the way Iroh works is somewhat
+different.&lt;/p&gt;
+&lt;p&gt;Iroh is not exactly a pure P2P framework, as it relies on some centralization.
+Iroh clients need some sort of peer discovery method (well, not just Iroh, P2P
+in general), and those methods all need some sort of centralization. Iroh
+clients connect to some sort of relay (by default N0&amp;#39;s public relay) and
+announce their public key, which is an asymmetric cryptographic key that
+identifies the peer on the network. Then, other clients can just contact the
+relay and ask for how they can connect to a given peer&amp;#39;s key. In an optimal
+world, the relay temporarily lets peers send data over itself before a direct
+P2P connection can be made between the two peers over QUIC (NAT hole punching,
+IP address discovery, etc.). Then the relay would drop the connection and just
+let the peers talk with each other directly. However, if this direct connection
+fails, the relay will continue to… relay the data between the peers. Although
+Iroh peers can communicate without using a relay (IE, through MDNS or direct
+public IP&amp;#39;s), the core point of Iroh is simple and reliable connections between
+peers which may or may not be behind a relay.&lt;/p&gt;
+&lt;p&gt;In theory, this sounds great! You can have P2P connectivity when it&amp;#39;s possible,
+and when its not you can still connect to a device through a relay. And it
+practice, its also (usually) great. The only downsides on the actual application
+side is the centralization of peer discovery. Even though alternatives exist, it
+still is second class (as of now… N0 is adding new experimental transports and
+peer discovery such as using BitTorrent&amp;#39;s Mainline DHT). However, there&amp;#39;s
+another small downside, which is that it&amp;#39;s really just a Rust library. While FFI
+bindings for other languages like Go and JavaScript exist, they&amp;#39;re certainly
+less polished and nice to use than the main Rust implementation. For Rust
+developers (including myself), this isn&amp;#39;t a problem as I use the language
+anyway. But for many who don&amp;#39;t, they&amp;#39;re unable to use Iroh except through
+(currently) shaky FFI bindings and cannot communicate with Iroh devices as
+opposed to LibP2P which has complete cross-language compatibility.&lt;/p&gt;
+&lt;p&gt;I certainly don&amp;#39;t want to make Iroh sound unmaintained or unusable. It&amp;#39;s an
+extremely useful framework that I&amp;#39;ve built applications in, such as
+&lt;a href=&quot;https://github.com/Logan-010/capsul&quot;&gt;capsul&lt;/a&gt;, a reliable P2P file
+storage system.&lt;/p&gt;
+&lt;p&gt;To conclude, there&amp;#39;s a LOT of P2P technologies found in the wild, much of it is
+easier and more accessible than ever to both developers and users. Long gone are
+the days of extremely complicated, DIY, and broken P2P networks developers have
+to hand-roll themselves. Instead, they can reach for an already existing
+framework or library and just start building. There&amp;#39;s still a long way to go,
+but I believe we&amp;#39;re in the golden age of P2P.&lt;/p&gt;
+</content:encoded>
     </item>
     <item>
       <title>The Mandelbrot Fractal</title>
@@ -41,7 +156,27 @@ func main() {
       <guid isPermaLink="true">https://logan-010.github.io/blog/1/</guid>
       <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
       <description>A facinating and beautiful formula</description>
-      <content:encoded>&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-1.jpg&quot; loading=&quot;lazy&quot;/&gt;&lt;p&gt;The mandelbrot fractal is an extremely interesting little mathematical wonder. It&apos;s a simple formula, defined as:&lt;/p&gt;&lt;p&gt;f&lt;sub&gt;c&lt;/sub&gt;(z)=z&lt;sup&gt;2&lt;/sup&gt;+c&lt;/p&gt;&lt;p&gt;Where z starts at 0.&lt;/p&gt;&lt;p&gt;Okay, but what does this actually mean in simple words us humans can understand? A number is in the mandelbrot set if f(0) does not escape to infinity, and if f(f(0)) dosent, and if f(f(f(0))) dosent, you get the point. The function can iterate infinite times and the number never escapes to infinity.&lt;/p&gt;&lt;p&gt;How does it not go to infinity though if you iterate infinite times? Well, think of a number like 2. 2 squared is 4. If I keep squaring it the number expands to infinity. Now what about 1? 1 squared is still 1. Okay now what about a number like 0.5 (1/2)? 0.5 squared is 0.25 (1/4). I can square this as many times as I want and it never reaces infinity.&lt;/p&gt;&lt;p&gt;As long as a number remains in the range of [-1,1], it will never reach infinity when squared indefinitely.&lt;/p&gt;&lt;p&gt;However with the &apos;+ c&apos; in the formula this changes things. Now the number escaping depends not only on z but c as well.&lt;/p&gt;&lt;p&gt;Okay, so c is a complex number (re + im). That&apos;s ANY number. And, z is part of the function&apos;s &lt;i&gt;iteration&lt;/i&gt;. The function can be represented pretty simply in code. Here&apos;s some pseudocode to demonstrate:&lt;/p&gt;&lt;pre class=&quot;bg-zinc-900 text-zinc-100 p-4 rounded-lg overflow-x-auto text-sm font-mono&quot;&gt;&lt;code&gt;def is_in_mandelbrot_set(c):
+      <content:encoded>&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-1.jpg&quot; loading=&quot;lazy&quot; /&gt;&lt;p&gt;The Mandelbrot fractal is an extremely interesting little mathematical wonder.
+It&amp;#39;s a simple formula, defined as:&lt;/p&gt;
+&lt;p&gt;f&lt;sub&gt;c&lt;/sub&gt;(z)=z&lt;sup&gt;2&lt;/sup&gt;+c&lt;/p&gt;
+&lt;p&gt;Where z starts at 0.&lt;/p&gt;
+&lt;p&gt;Okay, but what does this actually mean in simple words us humans can understand?
+A number is in the Mandelbrot set if f(0) does not escape to infinity, and if
+f(f(0)) doesn&amp;#39;t, and if f(f(f(0))) doesn&amp;#39;t, you get the point. The function can
+iterate infinite times and the number never escapes to infinity.&lt;/p&gt;
+&lt;p&gt;How does it not go to infinity though if you iterate infinite times? Well, think
+of a number like 2. 2 squared is 4. If I keep squaring it the number expands to
+infinity. Now what about 1? 1 squared is still 1. Okay now what about a number
+like 0.5 (1/2)? 0.5 squared is 0.25 (1/4). I can square this as many times as I
+want and it never reaches infinity.&lt;/p&gt;
+&lt;p&gt;As long as a number remains in the range of [-1,1], it will never reach infinity
+when squared indefinitely.&lt;/p&gt;
+&lt;p&gt;However with the &amp;#39;+ c&amp;#39; in the formula this changes things. Now the number
+escaping depends not only on z but c as well.&lt;/p&gt;
+&lt;p&gt;Okay, so c is a complex number (re + im). That&amp;#39;s ANY number. And, z is part of
+the function&amp;#39;s &lt;i&gt;iteration&lt;/i&gt;. The function can be represented pretty simply
+in code. Here&amp;#39;s some pseudocode to demonstrate:&lt;/p&gt;
+&lt;pre class=&quot;bg-zinc-900 text-zinc-100 p-4 rounded-lg overflow-x-auto text-sm font-mono&quot;&gt;&lt;code&gt;def is_in_mandelbrot_set(c):
     z = 0
     for 0..infinity:
         z = pow(z, 2) + c
@@ -49,7 +184,43 @@ func main() {
         if (z == infinity):
             return False
         else:
-            return True&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you&apos;ve noticed, the &apos;function&apos; mentions a &apos;set&apos;. This is what we know as the mandelbrot fractal. The mandelbrot set is a set of all complex numbers that don&apos;t escape to infinity when passed through this function infinite times.&lt;/p&gt;&lt;p&gt;Okay... so the mandelbrot set is just a bunch of numbers that don&apos;t escape to infinity. But how do we get these incredible visualizations? Well, these renderings are based off of the real and complex portions of all the numbers in the set.&lt;/p&gt;&lt;p&gt;Generally, image renderings show the real part of the complex number on the x axis, and the imaginary part on the y axis. The complex numbers represented by re + im are now mapped to (x,y) coordinates via (re, im).&lt;/p&gt;&lt;p&gt;Then, we calculate if the number is part of the set and color it if it is.&lt;/p&gt;&lt;p&gt;But then if we just plot the image we get a really generic black and white photo... what gives?&lt;/p&gt;&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-2.jpg&quot; loading=&quot;lazy&quot;/&gt;&lt;p&gt;Well yeah, but this is all still theoretical. After all our function cannot possibly actually iterate to infinity.&lt;/p&gt;&lt;p&gt;In reality we escape the function after z escapes some arbitrary &apos;bailout&apos; number we (the programmer/user) get to decide. Then we can use the number of iterations it took to sample colors from a colormap.&lt;/p&gt;&lt;p&gt;This spices up rendering quite a bit, and also makes it actually possible to render since we&apos;re not going all the way to infinity!&lt;/p&gt;&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-3.jpg&quot; loading=&quot;lazy&quot;/&gt;&lt;p&gt;Great... now we have colorful renderings of the mandelbrot fractal! It&apos;s worth noting that any value outside the range of Re [-2.5, 1] and Im [-1, 1] all escape to infinity, so for all the visualizations I&apos;ve shown, the numbers all lie within this range.&lt;/p&gt;&lt;p&gt;Now it gets really interesting . We can &apos;zoom in&apos; on the fractal on any given point where there&apos;s &apos;activity&apos; and start to see some truly incredible patterns emmerge.&lt;/p&gt;&lt;p&gt;Calculating &apos;activity&apos; and &apos;zoom&apos; is outside the scope of this blog post, but still worth looking into.&lt;/p&gt;&lt;p&gt;All of my visualizations are made with my own rendering program, &lt;a href=&quot;https://github.com/Logan-010/mbrot&quot; target=&quot;_blank&quot;&gt;mbrot&lt;/a&gt;. Go check it out! The code is all open source so feel free to inspect the actual real rendering algorithom&lt;/p&gt;&lt;p&gt;Anyway, as a send off, here&apos;s some cool fractals.&lt;/p&gt;&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-4.jpg&quot; loading=&quot;lazy&quot;/&gt;&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-5.jpg&quot; loading=&quot;lazy&quot;/&gt;&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-6.jpg&quot; loading=&quot;lazy&quot;/&gt;</content:encoded>
+            return True&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you&amp;#39;ve noticed, the &amp;#39;function&amp;#39; mentions a &amp;#39;set&amp;#39;. This is what we know as the
+Mandelbrot fractal. The Mandelbrot set is a set of all complex numbers that
+don&amp;#39;t escape to infinity when passed through this function infinite times.&lt;/p&gt;
+&lt;p&gt;Okay… so the Mandelbrot set is just a bunch of numbers that don&amp;#39;t escape to
+infinity. But how do we get these incredible visualizations? Well, these
+renderings are based off of the real and complex portions of all the numbers in
+the set.&lt;/p&gt;
+&lt;p&gt;Generally, image renderings show the real part of the complex number on the x
+axis, and the imaginary part on the y axis. The complex numbers represented by
+re + im are now mapped to (x,y) coordinates via (re, im).&lt;/p&gt;
+&lt;p&gt;Then, we calculate if the number is part of the set and color it if it is.&lt;/p&gt;
+&lt;p&gt;But then if we just plot the image we get a really generic black and white
+photo… what gives?&lt;/p&gt;
+&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-2.jpg&quot; loading=&quot;lazy&quot; /&gt;&lt;p&gt;Well yeah, but this is all still theoretical. After all our function cannot
+possibly actually iterate to infinity.&lt;/p&gt;
+&lt;p&gt;In reality we escape the function after z escapes some arbitrary &amp;#39;bailout&amp;#39;
+number we (the programmer/user) get to decide. Then we can use the number of
+iterations it took to sample colors from a color map.&lt;/p&gt;
+&lt;p&gt;This spices up rendering quite a bit, and makes it actually possible to render
+since we&amp;#39;re not going all the way to infinity!&lt;/p&gt;
+&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-3.jpg&quot; loading=&quot;lazy&quot; /&gt;&lt;p&gt;Great… now we have colorful renderings of the Mandelbrot fractal! It&amp;#39;s worth
+noting that any value outside the range of Re [-2.5, 1] and Im [-1, 1] all
+escape to infinity, so for all the visualizations I&amp;#39;ve shown, the numbers all
+lie within this range.&lt;/p&gt;
+&lt;p&gt;Now it gets really interesting . We can &amp;#39;zoom in&amp;#39; on the fractal on any given
+point where there&amp;#39;s &amp;#39;activity&amp;#39; and start to see some truly incredible patterns
+em merge.&lt;/p&gt;
+&lt;p&gt;Calculating &amp;#39;activity&amp;#39; and &amp;#39;zoom&amp;#39; is outside the scope of this blog post, but
+still worth looking into.&lt;/p&gt;
+&lt;p&gt;All of my visualizations are made with my own rendering program,
+&lt;a href=&quot;https://github.com/Logan-010/mbrot&quot; target=&quot;_blank&quot;&gt;mbrot&lt;/a&gt;. Go check
+it out! The code is all open source so feel free to inspect the actual real
+rendering algorithm&lt;/p&gt;
+&lt;p&gt;Anyway, as a send off, here&amp;#39;s some cool fractals.&lt;/p&gt;
+&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-4.jpg&quot; loading=&quot;lazy&quot; /&gt;&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-5.jpg&quot; loading=&quot;lazy&quot; /&gt;&lt;img alt=&quot;A fractal&quot; src=&quot;https://logan-010.github.io/blog/the-mandelbrot-fractal/brot-6.jpg&quot; loading=&quot;lazy&quot; /&gt;
+</content:encoded>
     </item>
   </channel>
 </rss>

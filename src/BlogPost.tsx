@@ -8,8 +8,6 @@ export default function BlogPost() {
 
   if (!post) return <NotFound />;
 
-  const { Content } = post;
-
   return (
     <div class="page-shell page-section max-w-4xl">
       <a class="inline-block text-sm font-medium text-muted underline underline-offset-4 hover:text-ink" href="/blog">
@@ -28,9 +26,7 @@ export default function BlogPost() {
           </time>
           <p class="body-copy mt-5">{post.description}</p>
         </header>
-        <div class="blog-content body-copy">
-          <Content />
-        </div>
+        <div class="blog-content body-copy" dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
     </div>
   );
