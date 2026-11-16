@@ -108,6 +108,12 @@ export default function Portfolio() {
               link="https://github.com/Logan-010/shaman"
             />
             <Project
+              name="wallace"
+              image={null}
+              description="Your personal voice assistant."
+              link="https://github.com/Logan-010/wallace"
+            />
+            <Project
               name="ihnet2"
               image={null}
               description="Simple & secure CLI port forwarding to any computer in the world."
@@ -124,6 +130,12 @@ export default function Portfolio() {
               image={null}
               description="Secure LAN file sharing in OCaml"
               link="https://github.com/Logan-010/oaks"
+            />
+            <Project
+              name="ellf"
+              image={null}
+              description="Search through a smart index of your local files"
+              link="https://github.com/Logan-010/ellf"
             />
             <Project
               name="diary"
