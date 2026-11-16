@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><title>Functional Fixation | Logan Briesemeister</title>
+	<meta charset="UTF-8" >
+	<meta name="viewport" content="width=device-width, initial-scale=1" >
+	<meta property="og:image" content="https://Logan-010.github.io/icon.png" >
+	
+	<link rel="alternate" type="application/rss+xml" title="Logan's Blog" href="/rss.xml" >
+	<link rel="icon" href="/icon.png">
+  <script type="module" crossorigin src="/assets/index-BaL9eTsC.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Bb-5t6UK.css">
+<meta name="description" content="Functional programming and my love for it">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Functional Fixation | Logan Briesemeister">
+<meta property="og:description" content="Functional programming and my love for it">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://Logan-010.github.io/blog/3">
+<meta property="og:url" content="https://Logan-010.github.io/blog/3"></head>
+
+<body>
+	<div id="app"><header class="sticky top-0 z-20 border-b border-line bg-canvas/95 backdrop-blur-md"><nav aria-label="Main navigation" class="page-shell flex flex-wrap items-center justify-center gap-1 py-3 sm:justify-end sm:gap-2"><a class="nav-link" href="/" rel="ugc"> Home 🏠 </a><a class="nav-link" href="/portfolio" rel="ugc"> Portfolio 💻 </a><a class="nav-link" href="/about" rel="ugc"> About ✨ </a><a class="nav-link" href="/contact" rel="ugc"> Contact 📖 </a><a class="nav-link" href="/blog"> Blog 📝 </a></nav></header><main class="flex flex-1 flex-col"><div class="page-shell page-section max-w-4xl"><link rel="stylesheet" href="/assets/github-dark-C8LL_u4z.css"><a class="inline-block text-sm font-medium text-muted underline underline-offset-4 hover:text-ink" href="/blog"><span aria-hidden="true">← </span>Back to blog</a><article class="mt-8 sm:mt-10"><header class="mb-8 sm:mb-10"><h1 class="page-title">Functional Fixation</h1><time class="mt-3 block text-sm text-muted" datetime="2026-11-16">November 16, 2026</time><p class="body-copy mt-5">Functional programming and my love for it</p></header><div class="blog-content body-copy"><p>Functional programming is a beautiful programming paradigm. It&#39;s main focus is
+on <em>purity</em>, which is, lack of side effects.</p>
+<p>Take this C code for example:</p>
+<pre><code class="hljs"><span class="hljs-type">static</span> <span class="hljs-type">int</span> num = <span class="hljs-number">0</span>;
+
+<span class="hljs-type">int</span> <span class="hljs-title function_">my_func</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> {
+  <span class="hljs-keyword">return</span> x + num++;
+}
+
+<span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> {
+  <span class="hljs-type">int</span> result = <span class="hljs-number">0</span>;
+  <span class="hljs-type">int</span> x = <span class="hljs-number">12</span>;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
+    result += my_func(x);
+  }
+}</code></pre>
+<p>For those unfamiliar with C, this code initializes a <code>result</code> variable set to 0,
+then a constant <code>x</code> set to 12. Then, it calls a function <code>my_func</code> that returns
+the sum of a product plus a counter variable <code>num</code> which is initially set to 0.</p>
+<p>This is impure! Even though I can call <code>my_func</code> multiple times with the same
+arguments, it returns a different number each time! This is where functional
+programming comes in. Here&#39;s our previous example in C, but instead in Haskell:</p>
+<pre><code class="hljs"><span class="hljs-title">result</span> v = sum [x + v | x &lt;- [<span class="hljs-number">0</span>..<span class="hljs-number">10</span>]]</code></pre>
+<p>Since the original C code can be thought about as the sum of the sums of a
+constant and value of numbers 0 to 10, we can represent the code quite easily in
+Haskell. The sums of each value are calculated by a simple list comprehension,
+which draws numbers from the range [0, 10], and maps them to the sum of the
+constant and value. Then the values of the list are summed and returned.
+Functional programming makes programmers think about &quot;mutations&quot; (changing the
+value of a variable, which is impossible in purely functional code) as a
+sequence of operations on data.</p>
+<p>In this example, the initial data is the numbers in the range [0, 10], which then
+are turned into a list of numbers of the sum of themselves and the constant, then
+summed into a final single number.</p>
+<p>Although this is a relatively simple example, it makes it easy to see how
+functional programming actually maps to traditional imperative programming. Now
+hold on… what actually is imperative programming? Well, you&#39;ve likely heard
+people drop the words &quot;imperative&quot; and &quot;declarative&quot;, but they&#39;re not just
+buzzwords unlike tech companies like to use them as.</p>
+<p>Imperative programming (or more generally, imperative in general), is describing
+how to do something–whereas declarative is describing what you want rather than
+how to do it. An imperative approach to brushing your teeth would be something
+like &quot;pick up your toothbrush, then squeeze toothpaste, then rub the toothbrush
+on your teeth for 2 minutes&quot; whereas a declarative approach would be &quot;brush your
+teeth&quot;.</p>
+<p>Important to note, is that since computers don&#39;t have brains (unless they&#39;re
+running a neural network), everything declarative is at some point based on
+imperative instructions.</p>
+<p>Whew… now that lengthy chunk of description is out of the way, here&#39;s
+some more actual code.</p>
+<pre><code class="hljs"><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> {
+  <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) {
+    <span class="hljs-comment">// for loop!</span>
+  }
+}</code></pre>
+<p>Yep! It&#39;s just a for loop. But see that little <code>++</code> at the end of <code>i</code>? That&#39;s a
+mutation. This is not allowed in functional programming!</p>
+<p>How do you do loops then?! Introducing, recursion:</p>
+<pre><code class="hljs"><span class="hljs-title">loop</span> n = <span class="hljs-keyword">if</span> n == <span class="hljs-number">0</span> <span class="hljs-keyword">then</span> () <span class="hljs-keyword">else</span> loop (n - <span class="hljs-number">1</span>)</code></pre>
+<p>Okay… what does this do?</p>
+<p>Loop is a function that does absolutely nothing, <code>n</code> times! If <code>n</code> is zero, than
+the function returns unit (nothing), but if it isn&#39;t, than it calls itself again
+with a new value of <code>n</code>, <code>n - 1</code>.</p>
+<p>So, so far we&#39;ve established that functional programming makes programmers think
+of mutations as a series of operations on data, that values are immutable
+(cannot change), and functions can call themselves. Functions in imperative
+languages generally can call themselves, but they lack tail call optimization
+and can cause stack overflows. Explaining this entirely is outside the scope of
+this blogpost, look it up!</p>
+<p>But now what about IO? Since IO is impure (may not return the same result each
+time), how is this handled? Well, in impure-functional languages like OCaml (my
+love), IO and exceptions are allowed. For example, opening a nonexistent file
+just panics with an exception:</p>
+<pre><code class="hljs"><span class="hljs-keyword">let</span> <span class="hljs-literal">()</span> = open_in <span class="hljs-string">&quot;does-not-exist.txt&quot;</span>;;</code></pre>
+<pre><code class="hljs">Exception: Sys_error <span class="hljs-string">&quot;does-not-exist.txt: No such file or directory&quot;</span>.</code></pre>
+<p>This is normal and expected behavior, programmers can use try and catch to
+manage exceptions in their code. However, in purely functional languages, like
+Haskell, IO is more complex. IO is a monad, and monads are just monoids in the
+class of endofunctors.</p>
+<p>Monads can get extremely complex and confusing very quick, and I don&#39;t
+particularly want to explain them in their entirety. However, here&#39;s a concise
+example:</p>
+<p>Think of a box. It&#39;s currently empty. I then place a cake in the box and give it
+to my friend. My friend then takes a couple of bites of the cake and then closes
+the box again and gives it to another friend. Now that friend has a box, with a
+partially eaten cake.</p>
+<p>How on earth does this relate to IO?! Okay I need to do some explaining. The box
+is a monad, and the cake is a value. In functional programming, you can <em>bind</em>
+monads to functions. What this does is run the function on the value inside the
+monad. This sequencing allows me to simulate IO through monads, because IO is
+represented by, well, the IO monad. The &quot;box&quot; can contain the value of the IO or
+an IO error. However, as programmers in Haskell, we cannot actually access the raw
+value inside the box, as only the main function can actually run IO.</p>
+<p>Wow. That&#39;s a lot. So functional programming represents mutations as a series of
+operations on data, values cannot change, functions can call themselves, and IO
+can be simulated through monads in a purely functional language.</p>
+<p>The functional programming rabbit hole goes so much deeper, but why would anyone
+use this over traditional (easier) imperative programming? Well first, no
+mutations makes data races impossible. This entirely eliminates a class of bugs
+programmers have struggled with for decades. It also generally results in some
+pretty fast code, as compilers do aggressive optimization in most functional
+languages. And finally, the code can just look cleaner. Remember the first
+example in C? Here&#39;s it in another systems programming language that has adopted
+many functional programming concepts, Rust!</p>
+<pre><code class="hljs"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() {
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">x</span> = <span class="hljs-number">12</span>;
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">result</span> = (<span class="hljs-number">0</span>..=<span class="hljs-number">10</span>).<span class="hljs-title function_ invoke__">map</span>(|v| v + x).<span class="hljs-title function_ invoke__">sum</span>();
+}</code></pre>
+<p>In addition to the benefits that functional programming languages provide, the
+languages themselves generally have very expressive algebraic data types that let
+programmers represent complex data in cleanly structured types, often making invalid
+state unrepresentative.</p>
+<p>Finally, notice any types in any of the code aside from C? Functional
+programming compilers are <em>really</em> good at infering types from how the functions
+themselves are used, making for a nice, often type-free, experience for the developer.</p>
+<p>I encourage you, the reader, to explore more into functional programming, as
+this blogpost is only the beginning.</p>
+</div></article></div></main><script type="isodata"></script></div>
+</body>
+
+</html>

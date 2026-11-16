@@ -35,7 +35,7 @@ Okay, so c is a complex number (re + im). That's ANY number. And, z is part of
 the function's <i>iteration</i>. The function can be represented pretty simply
 in code. Here's some pseudocode to demonstrate:
 
-```
+```py
 def is_in_mandelbrot_set(c):
     z = 0
     for 0..infinity:

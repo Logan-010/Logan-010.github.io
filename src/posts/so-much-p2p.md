@@ -56,7 +56,7 @@ applications</a> built in LibP2P
 
 Let's look at some code! Here's a basic example taken from LibP2P go examples.
 
-```
+```go
 package main
 
 import (

@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import matter from 'gray-matter';
+import hljs from 'highlight.js';
 import { Marked } from 'marked';
 import type { Plugin } from 'vite';
 import type { BlogEntry } from '../src/posts.ts';
@@ -17,8 +18,13 @@ function escapeXml(value: string): string {
 
 const markdown = new Marked({
 	renderer: {
-		code({ text }) {
-			return `<pre class="bg-zinc-900 text-zinc-100 p-4 rounded-lg overflow-x-auto text-sm font-mono"><code>${escapeXml(text)}</code></pre>\n`;
+		code({ text, lang }) {
+			const language = lang?.trim().split(/\s+/)[0];
+			const highlighted = language && hljs.getLanguage(language)
+				? hljs.highlight(text, { language }).value
+				: escapeXml(text);
+
+			return `<pre><code class="hljs">${highlighted}</code></pre>\n`;
 		},
 	},
 });

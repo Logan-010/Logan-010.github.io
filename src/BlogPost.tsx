@@ -1,6 +1,7 @@
 import { useRoute } from 'preact-iso';
 import NotFound from './NotFound';
 import { posts } from './posts';
+import highlightStyles from 'highlight.js/styles/github-dark.css?url';
 
 export default function BlogPost() {
   const { params } = useRoute();
@@ -10,6 +11,7 @@ export default function BlogPost() {
 
   return (
     <div class="page-shell page-section max-w-4xl">
+      <link rel="stylesheet" href={highlightStyles} />
       <a class="inline-block text-sm font-medium text-muted underline underline-offset-4 hover:text-ink" href="/blog">
         <span aria-hidden="true">← </span>Back to blog
       </a>

@@ -7,6 +7,132 @@
     <language>en-us</language>
     <atom:link href="https://logan-010.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Functional Fixation</title>
+      <link>https://logan-010.github.io/blog/3/</link>
+      <guid isPermaLink="true">https://logan-010.github.io/blog/3/</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Functional programming and my love for it</description>
+      <content:encoded>&lt;p&gt;Functional programming is a beautiful programming paradigm. It&amp;#39;s main focus is
+on &lt;em&gt;purity&lt;/em&gt;, which is, lack of side effects.&lt;/p&gt;
+&lt;p&gt;Take this C code for example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-type&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; num = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
+
+&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;my_func&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;(&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; x)&lt;/span&gt; {
+  &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; x + num++;
+}
+
+&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt; {
+  &lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; result = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;;
+  &lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; x = &lt;span class=&quot;hljs-number&quot;&gt;12&lt;/span&gt;;
+
+  &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;; i &amp;lt;= &lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;; i++) {
+    result += my_func(x);
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For those unfamiliar with C, this code initializes a &lt;code&gt;result&lt;/code&gt; variable set to 0,
+then a constant &lt;code&gt;x&lt;/code&gt; set to 12. Then, it calls a function &lt;code&gt;my_func&lt;/code&gt; that returns
+the sum of a product plus a counter variable &lt;code&gt;num&lt;/code&gt; which is initially set to 0.&lt;/p&gt;
+&lt;p&gt;This is impure! Even though I can call &lt;code&gt;my_func&lt;/code&gt; multiple times with the same
+arguments, it returns a different number each time! This is where functional
+programming comes in. Here&amp;#39;s our previous example in C, but instead in Haskell:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;result&lt;/span&gt; v = sum [x + v | x &amp;lt;- [&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;..&lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;]]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since the original C code can be thought about as the sum of the sums of a
+constant and value of numbers 0 to 10, we can represent the code quite easily in
+Haskell. The sums of each value are calculated by a simple list comprehension,
+which draws numbers from the range [0, 10], and maps them to the sum of the
+constant and value. Then the values of the list are summed and returned.
+Functional programming makes programmers think about &amp;quot;mutations&amp;quot; (changing the
+value of a variable, which is impossible in purely functional code) as a
+sequence of operations on data.&lt;/p&gt;
+&lt;p&gt;In this example, the initial data is the numbers in the range [0, 10], which then
+are turned into a list of numbers of the sum of themselves and the constant, then
+summed into a final single number.&lt;/p&gt;
+&lt;p&gt;Although this is a relatively simple example, it makes it easy to see how
+functional programming actually maps to traditional imperative programming. Now
+hold on… what actually is imperative programming? Well, you&amp;#39;ve likely heard
+people drop the words &amp;quot;imperative&amp;quot; and &amp;quot;declarative&amp;quot;, but they&amp;#39;re not just
+buzzwords unlike tech companies like to use them as.&lt;/p&gt;
+&lt;p&gt;Imperative programming (or more generally, imperative in general), is describing
+how to do something–whereas declarative is describing what you want rather than
+how to do it. An imperative approach to brushing your teeth would be something
+like &amp;quot;pick up your toothbrush, then squeeze toothpaste, then rub the toothbrush
+on your teeth for 2 minutes&amp;quot; whereas a declarative approach would be &amp;quot;brush your
+teeth&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Important to note, is that since computers don&amp;#39;t have brains (unless they&amp;#39;re
+running a neural network), everything declarative is at some point based on
+imperative instructions.&lt;/p&gt;
+&lt;p&gt;Whew… now that lengthy chunk of description is out of the way, here&amp;#39;s
+some more actual code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt; {
+  &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;hljs-number&quot;&gt;5&lt;/span&gt;; i++) {
+    &lt;span class=&quot;hljs-comment&quot;&gt;// for loop!&lt;/span&gt;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Yep! It&amp;#39;s just a for loop. But see that little &lt;code&gt;++&lt;/code&gt; at the end of &lt;code&gt;i&lt;/code&gt;? That&amp;#39;s a
+mutation. This is not allowed in functional programming!&lt;/p&gt;
+&lt;p&gt;How do you do loops then?! Introducing, recursion:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-title&quot;&gt;loop&lt;/span&gt; n = &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; n == &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;then&lt;/span&gt; () &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt; loop (n - &lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Okay… what does this do?&lt;/p&gt;
+&lt;p&gt;Loop is a function that does absolutely nothing, &lt;code&gt;n&lt;/code&gt; times! If &lt;code&gt;n&lt;/code&gt; is zero, than
+the function returns unit (nothing), but if it isn&amp;#39;t, than it calls itself again
+with a new value of &lt;code&gt;n&lt;/code&gt;, &lt;code&gt;n - 1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;So, so far we&amp;#39;ve established that functional programming makes programmers think
+of mutations as a series of operations on data, that values are immutable
+(cannot change), and functions can call themselves. Functions in imperative
+languages generally can call themselves, but they lack tail call optimization
+and can cause stack overflows. Explaining this entirely is outside the scope of
+this blogpost, look it up!&lt;/p&gt;
+&lt;p&gt;But now what about IO? Since IO is impure (may not return the same result each
+time), how is this handled? Well, in impure-functional languages like OCaml (my
+love), IO and exceptions are allowed. For example, opening a nonexistent file
+just panics with an exception:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;hljs-literal&quot;&gt;()&lt;/span&gt; = open_in &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;does-not-exist.txt&amp;quot;&lt;/span&gt;;;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;Exception: Sys_error &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;does-not-exist.txt: No such file or directory&amp;quot;&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is normal and expected behavior, programmers can use try and catch to
+manage exceptions in their code. However, in purely functional languages, like
+Haskell, IO is more complex. IO is a monad, and monads are just monoids in the
+class of endofunctors.&lt;/p&gt;
+&lt;p&gt;Monads can get extremely complex and confusing very quick, and I don&amp;#39;t
+particularly want to explain them in their entirety. However, here&amp;#39;s a concise
+example:&lt;/p&gt;
+&lt;p&gt;Think of a box. It&amp;#39;s currently empty. I then place a cake in the box and give it
+to my friend. My friend then takes a couple of bites of the cake and then closes
+the box again and gives it to another friend. Now that friend has a box, with a
+partially eaten cake.&lt;/p&gt;
+&lt;p&gt;How on earth does this relate to IO?! Okay I need to do some explaining. The box
+is a monad, and the cake is a value. In functional programming, you can &lt;em&gt;bind&lt;/em&gt;
+monads to functions. What this does is run the function on the value inside the
+monad. This sequencing allows me to simulate IO through monads, because IO is
+represented by, well, the IO monad. The &amp;quot;box&amp;quot; can contain the value of the IO or
+an IO error. However, as programmers in Haskell, we cannot actually access the raw
+value inside the box, as only the main function can actually run IO.&lt;/p&gt;
+&lt;p&gt;Wow. That&amp;#39;s a lot. So functional programming represents mutations as a series of
+operations on data, values cannot change, functions can call themselves, and IO
+can be simulated through monads in a purely functional language.&lt;/p&gt;
+&lt;p&gt;The functional programming rabbit hole goes so much deeper, but why would anyone
+use this over traditional (easier) imperative programming? Well first, no
+mutations makes data races impossible. This entirely eliminates a class of bugs
+programmers have struggled with for decades. It also generally results in some
+pretty fast code, as compilers do aggressive optimization in most functional
+languages. And finally, the code can just look cleaner. Remember the first
+example in C? Here&amp;#39;s it in another systems programming language that has adopted
+many functional programming concepts, Rust!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;main&lt;/span&gt;() {
+  &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;hljs-variable&quot;&gt;x&lt;/span&gt; = &lt;span class=&quot;hljs-number&quot;&gt;12&lt;/span&gt;;
+  &lt;span class=&quot;hljs-keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;hljs-variable&quot;&gt;result&lt;/span&gt; = (&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;..=&lt;span class=&quot;hljs-number&quot;&gt;10&lt;/span&gt;).&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;map&lt;/span&gt;(|v| v + x).&lt;span class=&quot;hljs-title function_ invoke__&quot;&gt;sum&lt;/span&gt;();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In addition to the benefits that functional programming languages provide, the
+languages themselves generally have very expressive algebraic data types that let
+programmers represent complex data in cleanly structured types, often making invalid
+state unrepresentative.&lt;/p&gt;
+&lt;p&gt;Finally, notice any types in any of the code aside from C? Functional
+programming compilers are &lt;em&gt;really&lt;/em&gt; good at infering types from how the functions
+themselves are used, making for a nice, often type-free, experience for the developer.&lt;/p&gt;
+&lt;p&gt;I encourage you, the reader, to explore more into functional programming, as
+this blogpost is only the beginning.&lt;/p&gt;
+</content:encoded>
+    </item>
+    <item>
       <title>So Much P2P</title>
       <link>https://logan-010.github.io/blog/2/</link>
       <guid isPermaLink="true">https://logan-010.github.io/blog/2/</guid>
@@ -49,26 +175,26 @@ and even
 &lt;a href=&quot;https://github.com/libp2p/awesome-libp2p&quot; target=&quot;_blank&quot;&gt;abundance of
 applications&lt;/a&gt; built in LibP2P&lt;/p&gt;
 &lt;p&gt;Let&amp;#39;s look at some code! Here&amp;#39;s a basic example taken from LibP2P go examples.&lt;/p&gt;
-&lt;pre class=&quot;bg-zinc-900 text-zinc-100 p-4 rounded-lg overflow-x-auto text-sm font-mono&quot;&gt;&lt;code&gt;package main
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;package&lt;/span&gt; main
 
-import (
-    &amp;quot;fmt&amp;quot;
-    &amp;quot;github.com/libp2p/go-libp2p&amp;quot;
+&lt;span class=&quot;hljs-keyword&quot;&gt;import&lt;/span&gt; (
+    &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;fmt&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;github.com/libp2p/go-libp2p&amp;quot;&lt;/span&gt;
 )
 
-func main() {
-    // start a libp2p node with default settings
+&lt;span class=&quot;hljs-function&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;hljs-params&quot;&gt;()&lt;/span&gt;&lt;/span&gt; {
+    &lt;span class=&quot;hljs-comment&quot;&gt;// start a libp2p node with default settings&lt;/span&gt;
     node, err := libp2p.New()
-    if err != nil {
-        panic(err)
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; err != &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt; {
+        &lt;span class=&quot;hljs-built_in&quot;&gt;panic&lt;/span&gt;(err)
     }
 
-    // print the node&amp;apos;s listening addresses
-    fmt.Println(&amp;quot;Listen addresses:&amp;quot;, node.Addrs())
+    &lt;span class=&quot;hljs-comment&quot;&gt;// print the node&amp;#x27;s listening addresses&lt;/span&gt;
+    fmt.Println(&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;Listen addresses:&amp;quot;&lt;/span&gt;, node.Addrs())
 
-    // shut the node down
-    if err := node.Close(); err != nil {
-        panic(err)
+    &lt;span class=&quot;hljs-comment&quot;&gt;// shut the node down&lt;/span&gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; err := node.Close(); err != &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt; {
+        &lt;span class=&quot;hljs-built_in&quot;&gt;panic&lt;/span&gt;(err)
     }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;That&amp;#39;s it! Although this example only listens on local addresses and prints
@@ -176,15 +302,15 @@ escaping depends not only on z but c as well.&lt;/p&gt;
 &lt;p&gt;Okay, so c is a complex number (re + im). That&amp;#39;s ANY number. And, z is part of
 the function&amp;#39;s &lt;i&gt;iteration&lt;/i&gt;. The function can be represented pretty simply
 in code. Here&amp;#39;s some pseudocode to demonstrate:&lt;/p&gt;
-&lt;pre class=&quot;bg-zinc-900 text-zinc-100 p-4 rounded-lg overflow-x-auto text-sm font-mono&quot;&gt;&lt;code&gt;def is_in_mandelbrot_set(c):
-    z = 0
-    for 0..infinity:
-        z = pow(z, 2) + c
+&lt;pre&gt;&lt;code class=&quot;hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;is_in_mandelbrot_set&lt;/span&gt;(&lt;span class=&quot;hljs-params&quot;&gt;c&lt;/span&gt;):
+    z = &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0.&lt;/span&gt;.infinity:
+        z = &lt;span class=&quot;hljs-built_in&quot;&gt;pow&lt;/span&gt;(z, &lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;) + c
 
-        if (z == infinity):
-            return False
-        else:
-            return True&lt;/code&gt;&lt;/pre&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;if&lt;/span&gt; (z == infinity):
+            &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-literal&quot;&gt;False&lt;/span&gt;
+        &lt;span class=&quot;hljs-keyword&quot;&gt;else&lt;/span&gt;:
+            &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;hljs-literal&quot;&gt;True&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you&amp;#39;ve noticed, the &amp;#39;function&amp;#39; mentions a &amp;#39;set&amp;#39;. This is what we know as the
 Mandelbrot fractal. The Mandelbrot set is a set of all complex numbers that
 don&amp;#39;t escape to infinity when passed through this function infinite times.&lt;/p&gt;
